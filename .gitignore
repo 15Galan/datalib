@@ -69,3 +69,8 @@ cmake-build-*/
 *.su
 *.idb
 *.pdb
+
+
+#### Proyecto ###
+# Archivos de test
+tests/

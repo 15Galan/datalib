@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/01 23:59:40 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/02 00:29:29 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ t_list	*ll_new(void *data);
 void	ll_add_first(t_list **list, void *data);
 void	ll_add_after(t_list **list, t_list *elem, void *data);
 void	ll_add_last(t_list **list, void *data);
-t_list	ll_replace(t_list *list, void *data, void *new_data);
+int		ll_replace(t_list *list, void *data, void *new_data);
 
 // Deletes one or more elements from the list.
 void	ll_remove_first(t_list **list);
 void	ll_remove(t_list **list, t_list *elem);
 void	ll_remove_last(t_list **list);
-void	ll_purge(t_list **list, void *data);
+int		ll_purge(t_list **list, void *data);
 void	ll_clear(t_list **list);
 
 // Check some data from the list.
@@ -47,7 +47,7 @@ t_list	ll_last(t_list *list);
 t_list	ll_search(t_list *list, void *data);
 
 // Print the list.
-void	ll_print(void);
+void	ll_print(t_list *list);
 
 /**	DOUBLY LINKED LIST	**/
 
@@ -119,16 +119,16 @@ typedef struct s_stack
 }	t_stack;
 
 // Modifies the stack.
-void	st_new(int size);
-void	st_push(void *data);
-void	*st_pop(void);
-void	st_clear(void);
+void	sk_new(int size);
+void	sk_push(void *data);
+void	*sk_pop(void);
+void	sk_clear(void);
 
 // Check some data from the stack.
-int		st_empty(void);
-int		st_size(void);
-void	*st_top(void);
-void	*st_peek(void);
+int		sk_empty(void);
+int		sk_size(void);
+void	*sk_top(void);
+void	*sk_peek(void);
 
 /** BINARY TREE **/
 
