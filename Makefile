@@ -2,7 +2,12 @@
 
 # Names
 LIBRARY = 	DS
-TEST	=	test
+TEST_01	=	test_ll
+TEST_02	=	test_dll
+TEST_03	=	test_qu
+TEST_04	=	test_sk
+TEST_05	=	test_st
+TEST_06	=	test_bt
 
 # Instructions
 CC 		=	gcc -Wall -Wextra -Werror
@@ -51,6 +56,6 @@ see:
 	@echo "Objects	:	$(OBJECTS)"
 	@echo "Testing	:	$(TEST_01)"
 
-test:
-	@$(CC) $(TESTING) $(LIBRARY) -o $(TEST)
+test: all
+	@$(CC) tests/dll.c $(LIBRARY) -o $(TEST_02)
 	@echo "Test file created."
