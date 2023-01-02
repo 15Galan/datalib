@@ -58,28 +58,28 @@ typedef struct s_dlist
 }	t_dlist;
 
 // Creates one or more elements for the list.
-t_dlist	*dl_new(void *data);
-void	dl_add_first(t_dlist **list, t_list *elem);
-void	dl_add_after(t_dlist **list, t_dlist *node, t_list *elem);
-void	dl_add_last(t_dlist **list, t_list *elem);
-t_dlist	dl_replace(t_dlist *elem, void *new_data);
+t_dlist	*dll_new(void *data);
+void	dll_add_first(t_dlist **list, t_dlist *elem);
+void	dll_add_after(t_dlist *elem, t_dlist *new);
+void	dll_add_last(t_dlist **list, t_dlist *elem);
+t_dlist	*dll_replace(t_dlist *elem, void *new_data);
 
 // Deletes one or more elements from the list.
-void	dl_remove_first(t_dlist **list);
-void	dl_remove(t_dlist **list, t_dlist *elem);
-void	dl_remove_last(t_dlist **list);
-void	dl_purge(t_dlist **list, void *data);
-void	dl_clear(t_dlist **list);
+void	dll_remove_first(t_dlist **list);
+void	dll_remove(t_dlist **list, t_dlist *elem);
+void	dll_remove_last(t_dlist **list);
+void	dll_purge(t_dlist **list, void *data);
+void	dll_clear(t_dlist **list);
 
 // Check some data from the list.
-int		dl_empty(t_dlist *list);
-int		dl_size(t_dlist *list);
-t_dlist	dl_first(t_dlist *list);
-t_dlist	dl_last(t_dlist *list);
-t_dlist	dl_search(t_dlist *list, void *data);
+int		dll_empty(t_dlist *list);
+int		dll_size(t_dlist *list);
+t_dlist	*dll_first(t_dlist *list);
+t_dlist	*dll_last(t_dlist *list);
+t_dlist	*dll_search(t_dlist *list, void *data);
 
 // Print the list.
-void	dl_print(void);
+void	dll_print(void);
 
 /**	QUEUE	**/
 
