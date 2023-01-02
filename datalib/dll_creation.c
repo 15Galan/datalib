@@ -36,22 +36,19 @@ t_dlist	*dll_new(void *data)
  * @brief   Adds a new node at the beginning of the list.
  *
  * @param list	Pointer to the first element of the list.
- * @param data  Pointer to the data to be stored in the node.
+ * @param elem	Pointer to the new node to be added.
  */
-void	dll_add_first(t_dlist **list, void *data)
+void	dll_add_first(t_dlist **list, t_dlist *elem)
 {
-	t_dlist	*new;
-
-	new = dll_new(data);
-	if (!new)
+	if (dll_empty(*list) || dll_empty(elem))
 		return ;
-	if (dll_empty(*list))
-		*list = new;
+	if (!*list)
+		*list = elem;
 	else
 	{
-		new->next = *list;
-		(*list)->prev = new;
-		*list = new;
+		elem->next = *list;
+		(*list)->prev = elem;
+		*list = elem;
 	}
 }
 
@@ -76,24 +73,21 @@ void	dll_add_after(t_dlist *elem, t_dlist *new)
  * @brief   Adds a new node at the end of the list.
  *
  * @param list	Pointer to the first element of the list.
- * @param data  Pointer to the data to be stored in the node.
- *
+ * @param elem	Pointer to the new node to be added.
  */
-void	dll_add_last(t_dlist **list, void *data)
+void	dll_add_last(t_dlist **list, t_dlist *elem)
 {
-	t_dlist	*new;
+	t_dlist	*last;
 
-	new = dll_new(data);
-	if (!new)
+	if (dll_empty(*list) || dll_empty(elem))
 		return ;
-	if (dll_empty(*list))
-		*list = new;
+	if (!*list)
+		*list = elem;
 	else
 	{
-		while ((*list)->next)
-			*list = (*list)->next;
-		(*list)->next = new;
-		new->prev = *list;
+		last = dll_last(*list);
+		last->next = elem;
+		elem->prev = last;
 	}
 }
 
