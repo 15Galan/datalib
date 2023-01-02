@@ -79,7 +79,7 @@ t_dlist	*dll_last(t_dlist *list);
 t_dlist	*dll_search(t_dlist *list, void *data);
 
 // Print the list.
-void	dll_print(void);
+void	dll_print(t_dlist *list);
 
 /**	QUEUE	**/
 

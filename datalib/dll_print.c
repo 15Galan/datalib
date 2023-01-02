@@ -20,7 +20,7 @@ void	dll_print(t_dlist *list)
 	ft_putstr_fd("[ ", 1);
 	while (aux)
 	{
-		ft_putstr_fd((char *) aux->content, 1);
+		ft_putstr_fd((char *) aux->data, 1);
 		if (aux->next)
 			ft_putstr_fd(" <--> ", 1);
 		aux = aux->next;
