@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft/libft.h"
-#include "datalib/datalib.h"
+#include "datalib.h"
 
 /**
  * @brief	Creates a new element for the list.
@@ -27,7 +26,7 @@ t_list	*ll_new(void *data)
 	new = (t_list *) malloc(sizeof(t_list));
 	if (!new)
 		return (NULL);
-	new->data = data;
+	new->content = data;
 	new->next = NULL;
 	return (new);
 }

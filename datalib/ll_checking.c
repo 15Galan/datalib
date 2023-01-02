@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft/libft.h"
-#include "datalib/datalib.h"
+#include "datalib.h"
 
 /**
  * @brief	Checks if the list is empty.
@@ -21,7 +20,7 @@
  * @return 	1 if the list is empty;
  *          0 otherwise.
  */
-int	ll_is_empty(t_list *lst)
+int	ll_empty(t_list *lst)
 {
 	return (lst == NULL);
 }
@@ -65,7 +64,7 @@ t_list	*ll_first(t_list *lst)
  */
 t_list	*ll_last(t_list *lst)
 {
-	if (!ll_is_empty(lst))
+	if (!ll_empty(lst))
 	{
 		while (lst->next)
 			lst = lst->next;
@@ -86,7 +85,7 @@ t_list	*ll_search(t_list *lst, void *data)
 {
 	while (lst)
 	{
-		if (lst->data == data)
+		if (lst->content == data)
 			return (lst);
 		lst = lst->next;
 	}

@@ -10,23 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft/libft.h"
-#include "datalib/datalib.h"
+#include "datalib.h"
 
 /**
  * @brief	Deletes the first element of the list.
  * 
  * @param list	Pointer to the first element of the list.
  */
-void	ll_remove_first(t_list *list)
+void	ll_remove_first(t_list **list)
 {
 	t_list	*aux;
 
-	if (!ll_is_empty(list))
+	if (list && *list)
 	{
-		aux = list->next;
-		free(ll_first(list));
-		list = aux;
+		aux = (*list)->next;
+		free(*list);
+		*list = aux;
 	}
 }
 
@@ -36,17 +35,25 @@ void	ll_remove_first(t_list *list)
  * @param list 	Pointer to the first element of the list.
  * @param elem 	Pointer to the element to be deleted.
  */
-void	ll_remove(t_list *list, t_list *elem)
+void	ll_remove(t_list **list, t_list *elem)
 {
 	t_list	*aux;
 
-	if (!ll_is_empty(list))
+	if (list && *list && elem)
 	{
-		aux = list;
-		while (aux->next != elem)
-			aux = aux->next;
-		aux->next = elem->next;
-		free(elem);
+		if (*list == elem)
+			ll_remove_first(list);
+		else
+		{
+			aux = *list;
+			while (aux->next && aux->next != elem)
+				aux = aux->next;
+			if (aux->next)
+			{
+				aux->next = elem->next;
+				free(elem);
+			}
+		}
 	}
 }
 
@@ -55,12 +62,23 @@ void	ll_remove(t_list *list, t_list *elem)
  * 
  * @param list 	Pointer to the first element of the list.
  */
-void	ll_remove_last(t_list *list)
+void	ll_remove_last(t_list **list)
 {
 	t_list	*aux;
 
-	if (!ll_is_empty(list))
-		free(ll_last(list));
+	if (list && *list)
+	{
+		if ((*list)->next == NULL)
+			ll_remove_first(list);
+		else
+		{
+			aux = *list;
+			while (aux->next->next)
+				aux = aux->next;
+			free(aux->next);
+			aux->next = NULL;
+		}
+	}
 }
 
 /**
@@ -71,26 +89,32 @@ void	ll_remove_last(t_list *list)
  * 
  * @return	Number of elements deleted.
  */
-int	ll_purge(t_list *list, void *data)
+int	ll_purge(t_list **list, void *data)
 {
-	t_list	*aux1;
-	t_list	*aux2;
+	t_list	*aux;
 	int		count;
 
-	if (!ll_is_empty(list))
-		return (0);
-	aux1 = list;
 	count = 0;
-	while (aux1->next != NULL)
+	if (list && *list)
 	{
-		if (aux1->next->data == data)
+		while (*list && (*list)->content == data)
 		{
-			aux2 = aux1->next;
-			aux1->next = aux1->next->next;
-			free(aux2);
+			aux = (*list)->next;
+			free(*list);
+			*list = aux;
 			count++;
 		}
-		aux1 = aux1->next;
+		aux = *list;
+		while (aux && aux->next)
+		{
+			if (aux->next->content == data)
+			{
+				ll_remove(list, aux->next);
+				count++;
+			}
+			else
+				aux = aux->next;
+		}
 	}
 	return (count);
 }
@@ -100,16 +124,17 @@ int	ll_purge(t_list *list, void *data)
  * 
  * @param list 	Pointer to the first element of the list.
  */
-void	ll_clear(t_list *list)
+void	ll_clear(t_list **list)
 {
 	t_list	*aux;
 
-	if (!ll_is_empty(list))
-		return ;
-	aux = list;
-	while (aux->next != NULL)
+	if (list && *list)
 	{
-		aux = aux->next;
-		free(aux);
+		while (*list)
+		{
+			aux = (*list)->next;
+			free(*list);
+			*list = aux;
+		}
 	}
 }

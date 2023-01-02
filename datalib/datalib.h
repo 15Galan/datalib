@@ -15,15 +15,13 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include "/home/srgalan/Repositorios/Charla-Git/git-ft/minilib/libft.h"
 
 /**	LINKED LIST	**/
 
+
 // Struct for the elements of the list.
-typedef struct s_list
-{
-	void			*data;
-	struct s_list	*next;
-}	t_list;
+
 
 // Creates one or more elements for the list.
 t_list	*ll_new(void *data);
@@ -33,11 +31,11 @@ void	ll_add_last(t_list **list, t_list *elem);
 int		ll_replace(t_list *elem, void *new_data);
 
 // Deletes one or more elements from the list.
-void	ll_remove_first(t_list *list);
-void	ll_remove(t_list *list, t_list *elem);
-void	ll_remove_last(t_list *list);
-int		ll_purge(t_list *list, void *data);
-void	ll_clear(t_list *list);
+void	ll_remove_first(t_list **list);
+void	ll_remove(t_list **list, t_list *elem);
+void	ll_remove_last(t_list **list);
+int		ll_purge(t_list **list, void *data);
+void	ll_clear(t_list **list);
 
 // Check some data from the list.
 int		ll_empty(t_list *list);
@@ -89,7 +87,7 @@ void	dl_print(void);
 typedef struct s_queue
 {
 	void	*data;
-	s_queue	*next;
+	struct s_queue	*next;
 }	t_queue;
 
 // Creates an element for the queue.
@@ -114,21 +112,21 @@ void	qu_print(void);
 // Struct for the elements of the stack.
 typedef struct s_stack
 {
-	void	*data;
-	s_stack	*next;
+	void			*data;
+	struct s_stack	*next;
 }	t_stack;
 
 // Modifies the stack.
-void	sk_new(int size);
-void	sk_push(void *data);
-void	*sk_pop(void);
-void	sk_clear(void);
+t_stack sk_new(void *data);
+void	sk_push(t_stack *stack, void *data);
+t_stack *sk_pop(t_stack *stack);
+void	sk_clear(t_stack *stack);
 
 // Check some data from the stack.
-int		sk_empty(void);
-int		sk_size(void);
-void	*sk_top(void);
-void	*sk_peek(void);
+int		sk_empty(t_stack *stack);
+int		sk_size(t_stack *stack);
+void	*sk_top(t_stack *stack);
+void	*sk_peek(t_stack *stack);
 
 /** BINARY TREE **/
 
