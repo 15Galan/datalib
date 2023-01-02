@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/02 00:29:29 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/02 01:36:34 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,24 +27,24 @@ typedef struct s_list
 
 // Creates one or more elements for the list.
 t_list	*ll_new(void *data);
-void	ll_add_first(t_list **list, void *data);
-void	ll_add_after(t_list **list, t_list *elem, void *data);
-void	ll_add_last(t_list **list, void *data);
-int		ll_replace(t_list *list, void *data, void *new_data);
+void	ll_add_first(t_list **list, t_list *elem);
+void	ll_add_after(t_list *elem, t_list *new);
+void	ll_add_last(t_list **list, t_list *elem);
+int		ll_replace(t_list *elem, void *new_data);
 
 // Deletes one or more elements from the list.
-void	ll_remove_first(t_list **list);
-void	ll_remove(t_list **list, t_list *elem);
-void	ll_remove_last(t_list **list);
-int		ll_purge(t_list **list, void *data);
-void	ll_clear(t_list **list);
+void	ll_remove_first(t_list *list);
+void	ll_remove(t_list *list, t_list *elem);
+void	ll_remove_last(t_list *list);
+int		ll_purge(t_list *list, void *data);
+void	ll_clear(t_list *list);
 
 // Check some data from the list.
 int		ll_empty(t_list *list);
 int		ll_size(t_list *list);
-t_list	ll_first(t_list *list);
-t_list	ll_last(t_list *list);
-t_list	ll_search(t_list *list, void *data);
+t_list	*ll_first(t_list *list);
+t_list	*ll_last(t_list *list);
+t_list	*ll_search(t_list *list, void *data);
 
 // Print the list.
 void	ll_print(t_list *list);
@@ -61,10 +61,10 @@ typedef struct s_dlist
 
 // Creates one or more elements for the list.
 t_dlist	*dl_new(void *data);
-void	dl_add_first(t_dlist **list, void *data);
-void	dl_add_after(t_dlist **list, t_dlist *elem, void *data);
-void	dl_add_last(t_dlist **list, void *data);
-t_dlist	dl_replace(t_dlist *list, void *data, void *new_data);
+void	dl_add_first(t_dlist **list, t_list *elem);
+void	dl_add_after(t_dlist **list, t_dlist *node, t_list *elem);
+void	dl_add_last(t_dlist **list, t_list *elem);
+t_dlist	dl_replace(t_dlist *elem, void *new_data);
 
 // Deletes one or more elements from the list.
 void	dl_remove_first(t_dlist **list);
