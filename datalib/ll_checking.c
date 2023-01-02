@@ -15,32 +15,32 @@
 /**
  * @brief	Checks if the list is empty.
  * 
- * @param lst 	Pointer to the first element of the list.
+ * @param list	Pointer to the first element of the list.
  * 
  * @return 	1 if the list is empty;
  *          0 otherwise.
  */
-int	ll_empty(t_list *lst)
+int	ll_empty(t_list *list)
 {
-	return (lst == NULL);
+	return (list == NULL);
 }
 
 /**
  * @brief   Counts the number of elements in the list. 
  * 
- * @param lst   Pointer to the first element of the list.
+ * @param list	Pointer to the first element of the list.
  * 
  * @return  The number of elements in the list.
  */
-int	ll_size(t_list *lst)
+int	ll_size(t_list *list)
 {
 	int	size;
 
 	size = 0;
-	while (lst)
+	while (list)
 	{
 		size++;
-		lst = lst->next;
+		list = list->next;
 	}
 	return (size);
 }
@@ -48,46 +48,46 @@ int	ll_size(t_list *lst)
 /**
  * @brief   Returns the first element of the list.
  * 
- * @param lst   Pointer to the first element of the list.
+ * @param list	Pointer to the first element of the list.
  * 
  * @return  Pointer to the first element of the list.
  */
-t_list	*ll_first(t_list *lst)
+t_list	*ll_first(t_list *list)
 {
-	return (lst);
+	return (list);
 }
 
 /**
  * @brief   Returns the last element of the list.
  * 
- * @param lst   Pointer to the first element of the list.
+ * @param list	Pointer to the first element of the list.
  */
-t_list	*ll_last(t_list *lst)
+t_list	*ll_last(t_list *list)
 {
-	if (!ll_empty(lst))
+	if (!ll_empty(list))
 	{
-		while (lst->next)
-			lst = lst->next;
+		while (list->next)
+			list = list->next;
 	}
-	return (lst);
+	return (list);
 }
 
 /**
  * @brief   Searches for an element in the list. 
  * 
- * @param lst   Pointer to the first element of the list.
+ * @param list	Pointer to the first element of the list.
  * @param data  The data to be searched.
  * 
  * @return  Pointer to the element if found;
  *          NULL otherwise.
  */
-t_list	*ll_search(t_list *lst, void *data)
+t_list	*ll_search(t_list *list, void *data)
 {
-	while (lst)
+	while (list)
 	{
-		if (lst->content == data)
-			return (lst);
-		lst = lst->next;
+		if (list->content == data)
+			return (list);
+		list = list->next;
 	}
 	return (NULL);
 }
