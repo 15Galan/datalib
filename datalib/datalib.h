@@ -15,7 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include "/home/srgalan/Repositorios/Charla-Git/git-ft/minilib/libft.h"
+# include "/home/srgalan/Sync/git-ft/minilib/libft.h"
 
 /**	LINKED LIST	**/
 
