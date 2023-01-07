@@ -117,16 +117,19 @@ typedef struct s_stack
 }	t_stack;
 
 // Modifies the stack.
-t_stack sk_new(void *data);
-void	sk_push(t_stack *stack, void *data);
-t_stack *sk_pop(t_stack *stack);
-void	sk_clear(t_stack *stack);
+t_stack *sk_new(void *data);
+void	sk_push(t_stack **stack, void *data);
+t_stack *sk_pop(t_stack **stack);
+void	sk_clear(t_stack **stack);
 
 // Check some data from the stack.
 int		sk_empty(t_stack *stack);
 int		sk_size(t_stack *stack);
-void	*sk_top(t_stack *stack);
+t_stack *sk_top(t_stack *stack);
 void	*sk_peek(t_stack *stack);
+
+// Print the stack.
+void	sk_print(t_stack *stack);
 
 /** BINARY TREE **/
 
