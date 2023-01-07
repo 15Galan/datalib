@@ -91,21 +91,21 @@ typedef struct s_queue
 }	t_queue;
 
 // Creates an element for the queue.
-t_queue	*qu_new(void);
-void	qu_enqueue(int data);
+t_queue	*qu_new(void* data);
+void	qu_enqueue(t_queue **queue, void *data);
 
 // Deletes an element from the queue.
-int		qu_dequeue(void);
-void	qu_clear(void);
+void	qu_dequeue(t_queue **queue);
+void	qu_clear(t_queue **queue);
 
 // Check some data from the queue.
-int		qu_empty(void);
-int		qu_size(void);
-int		qu_front(void);
-int		qu_back(void);
+int		qu_empty(t_queue *queue);
+int		qu_size(t_queue *queue);
+t_queue	*qu_first(t_queue *queue);
+t_queue *qu_last(t_queue *queue);
 
 // Print the queue.
-void	qu_print(void);
+void	qu_print(t_queue *queue);
 
 /**	STACK	**/
 
