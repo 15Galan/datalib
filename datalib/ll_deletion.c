@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   deletion.c                                         :+:      :+:    :+:   */
+/*   ll_deletion.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 00:58:54 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/02 01:49:53 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/08 14:46:17 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,23 +97,17 @@ int	ll_purge(t_list **list, void *data)
 	count = 0;
 	if (list && *list)
 	{
-		while (*list && (*list)->content == data)
+		while (*list)
 		{
-			aux = (*list)->next;
-			free(*list);
-			*list = aux;
-			count++;
-		}
-		aux = *list;
-		while (aux && aux->next)
-		{
-			if (aux->next->content == data)
+			if ((*list)->content == data)
 			{
-				ll_remove(list, aux->next);
+				aux = (*list)->next;
+				free(*list);
+				*list = aux;
 				count++;
 			}
 			else
-				aux = aux->next;
+				list = &(*list)->next;
 		}
 	}
 	return (count);
