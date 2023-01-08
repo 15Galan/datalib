@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dll.c                                              :+:      :+:    :+:   */
+/*   dll_checking.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/02 12:53:50 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/08 14:40:38 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ int	dll_empty(t_dlist *list)
  *
  * @return  Number of nodes in the list.
  */
-int dll_size(t_dlist *list)
+int	dll_size(t_dlist *list)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (list)
@@ -51,7 +51,7 @@ int dll_size(t_dlist *list)
  *
  * @return	Pointer to the first node of the list.
  */
-t_dlist *dll_first(t_dlist *list)
+t_dlist	*dll_first(t_dlist *list)
 {
 	while (list && list->prev)
 		list = list->prev;
@@ -65,7 +65,7 @@ t_dlist *dll_first(t_dlist *list)
  *
  * @return	Pointer to the last node of the list.
  */
-t_dlist *dll_last(t_dlist *list)
+t_dlist	*dll_last(t_dlist *list)
 {
 	while (list && list->next)
 		list = list->next;
@@ -81,7 +81,7 @@ t_dlist *dll_last(t_dlist *list)
  * @return	Pointer to the node containing the data;
  * 			NULL if the data is not found.
  */
-t_dlist *dll_search(t_dlist *list, void *data)
+t_dlist	*dll_search(t_dlist *list, void *data)
 {
 	while (list)
 	{

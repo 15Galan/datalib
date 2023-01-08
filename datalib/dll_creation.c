@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dll.c                                              :+:      :+:    :+:   */
+/*   dll_creation.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/02 12:53:50 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/08 14:42:21 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void	dll_add_last(t_dlist **list, t_dlist *elem)
  */
 t_dlist	*dll_replace(t_dlist *elem, void *data)
 {
-	t_dlist *new;
+	t_dlist	*new;
 
 	new = dll_new(data);
 	if (!new)

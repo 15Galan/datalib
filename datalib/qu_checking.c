@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dll.c                                              :+:      :+:    :+:   */
+/*   qu_checking.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/02 12:53:50 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/08 14:41:57 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ int	qu_empty(t_queue *queue)
  *
  * @return  Number of nodes in the queue.
  */
-int qu_size(t_queue *queue)
+int	qu_size(t_queue *queue)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (queue)
@@ -51,7 +51,7 @@ int qu_size(t_queue *queue)
  *
  * @return	Pointer to the first node of the queue.
  */
-t_queue *qu_first(t_queue *queue)
+t_queue	*qu_first(t_queue *queue)
 {
 	return (queue);
 }
@@ -63,7 +63,7 @@ t_queue *qu_first(t_queue *queue)
  *
  * @return	Pointer to the last node of the queue.
  */
-t_queue *qu_last(t_queue *queue)
+t_queue	*qu_last(t_queue *queue)
 {
 	while (queue && queue->next)
 		queue = queue->next;
@@ -79,7 +79,7 @@ t_queue *qu_last(t_queue *queue)
  * @return	Pointer to the node containing the data;
  * 			NULL if the data is not found.
  */
-t_queue *qu_search(t_queue *queue, void *data)
+t_queue	*qu_search(t_queue *queue, void *data)
 {
 	while (queue)
 	{

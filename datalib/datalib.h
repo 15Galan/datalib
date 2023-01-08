@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/02 01:36:34 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/08 14:41:26 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@
 
 /**	LINKED LIST	**/
 
-
 // Struct for the elements of the list.
-
 
 // Creates one or more elements for the list.
 t_list	*ll_new(void *data);
@@ -86,12 +84,12 @@ void	dll_print(t_dlist *list);
 // Struct for the elements of the queue.
 typedef struct s_queue
 {
-	void	*data;
+	void			*data;
 	struct s_queue	*next;
 }	t_queue;
 
 // Creates an element for the queue.
-t_queue	*qu_new(void* data);
+t_queue	*qu_new(void *data);
 void	qu_enqueue(t_queue **queue, void *data);
 
 // Deletes an element from the queue.
@@ -102,7 +100,7 @@ void	qu_clear(t_queue **queue);
 int		qu_empty(t_queue *queue);
 int		qu_size(t_queue *queue);
 t_queue	*qu_first(t_queue *queue);
-t_queue *qu_last(t_queue *queue);
+t_queue	*qu_last(t_queue *queue);
 
 // Print the queue.
 void	qu_print(t_queue *queue);
@@ -117,15 +115,15 @@ typedef struct s_stack
 }	t_stack;
 
 // Modifies the stack.
-t_stack *sk_new(void *data);
+t_stack	*sk_new(void *data);
 void	sk_push(t_stack **stack, void *data);
-t_stack *sk_pop(t_stack **stack);
+t_stack	*sk_pop(t_stack **stack);
 void	sk_clear(t_stack **stack);
 
 // Check some data from the stack.
 int		sk_empty(t_stack *stack);
 int		sk_size(t_stack *stack);
-t_stack *sk_top(t_stack *stack);
+t_stack	*sk_top(t_stack *stack);
 void	*sk_peek(t_stack *stack);
 
 // Print the stack.
