@@ -15,7 +15,7 @@ AR 		= 	ar rc
 RM 		= 	rm -f
 
 # Files
-SOURCES = 	$(wildcard minilib/* datalib/*.c)
+SOURCES = 	$(wildcard minilib/*.c datalib/*.c)
 OBJECTS =	$(SOURCES:.c=.o)
 TESTING	= 	$(wildcard tests/*.c)
 
