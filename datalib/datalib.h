@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/19 21:47:11 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/20 13:01:16 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,6 +186,6 @@ int		set_equal(t_set *set1, t_set *set2);
 int		set_size(t_set *set);
 
 // Print the set.
-void	set_print(void);
+void	set_print(t_set *set);
 
 #endif
