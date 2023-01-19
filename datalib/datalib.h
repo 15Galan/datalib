@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/08 14:41:26 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/19 21:47:11 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,19 +164,28 @@ void	bt_print(t_tree *tree);
 // Struct for the elements of the set.
 typedef struct s_set
 {
-	void	*elements;
-	int		size;
+	void			*data;
+	struct s_set	*next;
 }	t_set;
 
 // Basic operations.
-void	st_new(void);
-void	st_add(void *data);
-void	st_remove(void *data);
+t_set	*set_new(void *data);
+void	set_add(t_set **set, void *data);
+void	set_remove(t_set **set, void *data);
 
 // Modifiers operations.
-int		st_empty(void);
-void	st_union(t_set *set1, t_set *set2);
-void	st_intersection(t_set *set1, t_set *set2);
-void	st_difference(t_set *set1, t_set *set2);
+t_set	*set_union(t_set *set1, t_set *set2);
+t_set	*set_intersection(t_set *set1, t_set *set2);
+t_set	*set_difference(t_set *set1, t_set *set2);
+
+// Check some data from the set.
+int		set_empty(t_set *set);
+int		set_contains(t_set *set, void *data);
+int		set_subset(t_set *set1, t_set *set2);
+int		set_equal(t_set *set1, t_set *set2);
+int		set_size(t_set *set);
+
+// Print the set.
+void	set_print(void);
 
 #endif
