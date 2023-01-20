@@ -74,13 +74,29 @@ void	test_stats(t_set *a, t_set *b)
 	t_set	*i;
 
 	i = set_intersection(a, b);
-	status("[Subconjunto] > ¿Este conjunto es subconjunto de STAFF?", i);
+	status("[Pertenencia] > ¿Este conjunto es subconjunto de STAFF?", i);
 	ft_putstr_fd("\tRespuesta: ", 1);
 	ft_putstr_fd(set_subset(i, b) ? "Sí." : "No.", 1);
 	ft_putstr_fd("\n\n", 1);
-	status("[Subconjunto] > ¿Este conjunto es subconjunto de {}?", i);
+	status("[Pertenencia] > ¿Este conjunto es subconjunto de {}?", i);
 	ft_putstr_fd("\tRespuesta: ", 1);
 	ft_putstr_fd(set_subset(i, NULL) ? "Sí." : "No.", 1);
+	ft_putchar_fd('\n', 1);
+	status("[Pertenencia] > ¿Este conjunto es subconjunto de Cursus?", NULL);
+	ft_putstr_fd("\tRespuesta: ", 1);
+	ft_putstr_fd(set_subset(NULL, a) ? "Sí." : "No.", 1);
+	ft_putchar_fd('\n', 1);
+	status("[Igualdad] > ¿Los conjuntos Cursus y STAFF son iguales?", NULL);
+	ft_putstr_fd("\tRespuesta: ", 1);
+	ft_putstr_fd(set_equal(a, b) ? "Sí." : "No.", 1);
+	ft_putchar_fd('\n', 1);
+	status("[Igualdad] > ¿Los conjuntos {} y {} son iguales?", NULL);
+	ft_putstr_fd("\tRespuesta: ", 1);
+	ft_putstr_fd(set_equal(NULL, NULL) ? "Sí." : "No.", 1);
+	ft_putchar_fd('\n', 1);
+	status("[Igualdad] > ¿Los conjuntos Cursus y {} son iguales?", NULL);
+	ft_putstr_fd("\tRespuesta: ", 1);
+	ft_putstr_fd(set_equal(a, NULL) ? "Sí." : "No.", 1);
 	ft_putchar_fd('\n', 1);
 }
 
