@@ -72,5 +72,10 @@ cmake-build-*/
 
 
 #### Proyecto ###
+
+# Librería
+DS
+
 # Archivos de test
-*.txt
+test_*
+
