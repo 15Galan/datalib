@@ -15,7 +15,7 @@ AR 		= 	ar rc
 RM 		= 	rm -f
 
 # Files
-SOURCES = 	$(wildcard minilib/*.c) $(wildcard datalib/*.c)
+SOURCES = 	$(wildcard minilib/*.c datalib/*.c)
 OBJECTS =	$(SOURCES:.c=.o)
 TESTING	= 	$(wildcard tests/*.c)
 
@@ -55,6 +55,9 @@ see:
 	@echo "Sources	:	$(SOURCES)"
 	@echo "Objects	:	$(OBJECTS)"
 	@echo "Testing	:	$(TEST_01)"
+
+norm:
+	@norminette $(SOURCES)
 
 test: all
 	@$(CC) tests/dll.c $(LIBRARY) -o $(TEST_02)

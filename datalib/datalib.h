@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/02 01:36:34 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/20 13:01:16 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@
 
 /**	LINKED LIST	**/
 
-
 // Struct for the elements of the list.
-
 
 // Creates one or more elements for the list.
 t_list	*ll_new(void *data);
@@ -86,12 +84,12 @@ void	dll_print(t_dlist *list);
 // Struct for the elements of the queue.
 typedef struct s_queue
 {
-	void	*data;
+	void			*data;
 	struct s_queue	*next;
 }	t_queue;
 
 // Creates an element for the queue.
-t_queue	*qu_new(void* data);
+t_queue	*qu_new(void *data);
 void	qu_enqueue(t_queue **queue, void *data);
 
 // Deletes an element from the queue.
@@ -102,7 +100,7 @@ void	qu_clear(t_queue **queue);
 int		qu_empty(t_queue *queue);
 int		qu_size(t_queue *queue);
 t_queue	*qu_first(t_queue *queue);
-t_queue *qu_last(t_queue *queue);
+t_queue	*qu_last(t_queue *queue);
 
 // Print the queue.
 void	qu_print(t_queue *queue);
@@ -117,15 +115,15 @@ typedef struct s_stack
 }	t_stack;
 
 // Modifies the stack.
-t_stack *sk_new(void *data);
+t_stack	*sk_new(void *data);
 void	sk_push(t_stack **stack, void *data);
-t_stack *sk_pop(t_stack **stack);
+t_stack	*sk_pop(t_stack **stack);
 void	sk_clear(t_stack **stack);
 
 // Check some data from the stack.
 int		sk_empty(t_stack *stack);
 int		sk_size(t_stack *stack);
-t_stack *sk_top(t_stack *stack);
+t_stack	*sk_top(t_stack *stack);
 void	*sk_peek(t_stack *stack);
 
 // Print the stack.
@@ -166,19 +164,28 @@ void	bt_print(t_tree *tree);
 // Struct for the elements of the set.
 typedef struct s_set
 {
-	void	*elements;
-	int		size;
+	void			*data;
+	struct s_set	*next;
 }	t_set;
 
 // Basic operations.
-void	st_new(void);
-void	st_add(void *data);
-void	st_remove(void *data);
+t_set	*set_new(void *data);
+void	set_add(t_set **set, void *data);
+void	set_remove(t_set **set, void *data);
 
 // Modifiers operations.
-int		st_empty(void);
-void	st_union(t_set *set1, t_set *set2);
-void	st_intersection(t_set *set1, t_set *set2);
-void	st_difference(t_set *set1, t_set *set2);
+t_set	*set_union(t_set *set1, t_set *set2);
+t_set	*set_intersection(t_set *set1, t_set *set2);
+t_set	*set_difference(t_set *set1, t_set *set2);
+
+// Check some data from the set.
+int		set_empty(t_set *set);
+int		set_contains(t_set *set, void *data);
+int		set_subset(t_set *set1, t_set *set2);
+int		set_equal(t_set *set1, t_set *set2);
+int		set_size(t_set *set);
+
+// Print the set.
+void	set_print(t_set *set);
 
 #endif
