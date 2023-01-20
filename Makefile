@@ -56,6 +56,9 @@ see:
 	@echo "Objects	:	$(OBJECTS)"
 	@echo "Testing	:	$(TEST_01)"
 
+norm:
+	@norminette $(SOURCES)
+
 test: all
 	@$(CC) tests/dll.c $(LIBRARY) -o $(TEST_02)
 	@echo "Test file created."
