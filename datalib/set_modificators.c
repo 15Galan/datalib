@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 20:44:57 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/20 13:01:01 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/20 15:36:03 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ void	set_remove(t_set **set, void *data)
 	t_set	*aux;
 	t_set	*prev;
 
+	if (!set_contains(*set, data))
+		return ;
 	aux = *set;
 	prev = NULL;
 	while (aux)
