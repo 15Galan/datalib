@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/19 21:11:38 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/21 21:32:51 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,7 @@ t_dlist	*dll_new(void *data)
  */
 void	dll_add_first(t_dlist **list, t_dlist *elem)
 {
-	if (dll_empty(*list) || dll_empty(elem))
-		return ;
-	if (!*list)
+	if (dll_empty(*list))
 		*list = elem;
 	else
 	{
@@ -79,9 +77,7 @@ void	dll_add_last(t_dlist **list, t_dlist *elem)
 {
 	t_dlist	*last;
 
-	if (dll_empty(*list) || dll_empty(elem))
-		return ;
-	if (!*list)
+	if (dll_empty(*list))
 		*list = elem;
 	else
 	{
