@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 17:32:56 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/22 01:50:08 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/22 12:42:07 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ void	test_deletion(t_list **list)
 	ll_remove(list, ll_search(*list, "abello-r"));
 	status("Se elimina 'abello-r':", *list, 1);
 	ll_clear(list);
-	status("Se vacía la lista:", *list, 2);
+	status("Se vacía la lista:", *list, 1);
 }
 
 int	main(void)
@@ -110,5 +110,7 @@ int	main(void)
 	test_stats(empty);
 	ft_putstr_fd("# Funciones de eliminación\n\n", 1);
 	test_deletion(&list);
+	ft_putchar_fd('\n', 1);
 	test_deletion(&empty);
+	return (0);
 }
