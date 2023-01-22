@@ -15,7 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include "/home/srgalan/Sync/ft_git/Libft/libft.h"
+# include "../Libft/libft.h"
 
 /**	LINKED LIST	**/
 

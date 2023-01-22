@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "/home/srgalan/Sync/ft_git/datalib/datalib.h"
+#include "../datalib/datalib.h"
 
 void	status(char *msg, t_dlist *lst, unsigned int spc)
 {
