@@ -6,11 +6,11 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 17:34:26 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/22 12:37:58 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/22 17:59:54 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "/home/srgalan/Sync/git-ft/datalib/datalib.h"
+#include "/home/srgalan/Sync/ft_git/datalib/datalib.h"
 
 void	status(char *msg, t_set *set, unsigned int spc)
 {

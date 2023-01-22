@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/22 16:44:51 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/22 17:59:04 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include "/home/srgalan/Sync/git-ft/minilib/libft.h"
+# include "/home/srgalan/Sync/ft_git/Libft/libft.h"
 
 /**	LINKED LIST	**/
 
