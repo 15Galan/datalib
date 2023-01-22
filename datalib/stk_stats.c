@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/19 21:12:37 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/22 12:52:35 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
  * @return	1 if the stack is empty;
  * 			0 otherwise.
  */
-int	sk_empty(t_stack *stack)
+int	stk_empty(t_stack *stack)
 {
 	return (stack == NULL);
 }
@@ -32,7 +32,7 @@ int	sk_empty(t_stack *stack)
  *
  * @return	Number of elements in the stack.
  */
-int	sk_size(t_stack *stack)
+int	stk_size(t_stack *stack)
 {
 	int	size;
 
@@ -53,9 +53,9 @@ int	sk_size(t_stack *stack)
  * @return 	Pointer to the top element;
  * 			NULL if the stack is empty.
  */
-t_stack	*sk_top(t_stack *stack)
+t_stack	*stk_top(t_stack *stack)
 {
-	if (sk_empty(stack))
+	if (stk_empty(stack))
 		return (NULL);
 	return (stack);
 }
@@ -68,9 +68,9 @@ t_stack	*sk_top(t_stack *stack)
  * @return	Pointer to the top element data;
  * 			NULL if the stack is empty.
  */
-void	*sk_peek(t_stack *stack)
+void	*stk_peek(t_stack *stack)
 {
-	if (sk_empty(stack))
+	if (stk_empty(stack))
 		return (NULL);
 	return (stack->data);
 }

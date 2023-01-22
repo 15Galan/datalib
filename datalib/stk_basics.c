@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stk_operations.c                                   :+:      :+:    :+:   */
+/*   stk_basics.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/19 21:12:28 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/22 12:52:04 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  *
  * @return	Pointer to the new element.
  */
-t_stack	*sk_new(void *data)
+t_stack	*stk_new(void *data)
 {
 	t_stack	*new;
 
@@ -37,11 +37,11 @@ t_stack	*sk_new(void *data)
  * @param stack	Pointer to the stack.
  * @param data 	The data to store in the new element.
  */
-void	sk_push(t_stack **stack, void *data)
+void	stk_push(t_stack **stack, void *data)
 {
 	t_stack	*new;
 
-	new = sk_new(data);
+	new = stk_new(data);
 	if (new == NULL)
 		return ;
 	new->next = *stack;
@@ -56,7 +56,7 @@ void	sk_push(t_stack **stack, void *data)
  * @return 	Pointer to the top element;
  * 			NULL if the stack is empty.
  */
-t_stack	*sk_pop(t_stack **stack)
+t_stack	*stk_pop(t_stack **stack)
 {
 	t_stack	*aux;
 
@@ -73,7 +73,7 @@ t_stack	*sk_pop(t_stack **stack)
  *
  * @param stack 	Pointer to the stack.
  */
-void	sk_clear(t_stack **stack)
+void	stk_clear(t_stack **stack)
 {
 	t_stack	*aux;
 

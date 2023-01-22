@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/22 12:50:18 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/22 12:52:35 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,19 +115,19 @@ typedef struct s_stack
 }	t_stack;
 
 // Modifies the stack.
-t_stack	*sk_new(void *data);
-void	sk_push(t_stack **stack, void *data);
-t_stack	*sk_pop(t_stack **stack);
-void	sk_clear(t_stack **stack);
+t_stack	*stk_new(void *data);
+void	stk_push(t_stack **stack, void *data);
+t_stack	*stk_pop(t_stack **stack);
+void	stk_clear(t_stack **stack);
 
 // Check some data from the stack.
-int		sk_empty(t_stack *stack);
-int		sk_size(t_stack *stack);
-t_stack	*sk_top(t_stack *stack);
-void	*sk_peek(t_stack *stack);
+int		stk_empty(t_stack *stack);
+int		stk_size(t_stack *stack);
+t_stack	*stk_top(t_stack *stack);
+void	*stk_peek(t_stack *stack);
 
 // Print the stack.
-void	sk_print(t_stack *stack);
+void	stk_print(t_stack *stack);
 
 /** BINARY TREE **/
 
