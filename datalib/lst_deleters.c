@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 00:58:54 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/19 21:11:57 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/22 12:48:02 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
  * 
  * @param list	Pointer to the first element of the list.
  */
-void	ll_remove_first(t_list **list)
+void	lst_remove_first(t_list **list)
 {
 	t_list	*aux;
 
@@ -35,14 +35,14 @@ void	ll_remove_first(t_list **list)
  * @param list 	Pointer to the first element of the list.
  * @param elem 	Pointer to the element to be deleted.
  */
-void	ll_remove(t_list **list, t_list *elem)
+void	lst_remove(t_list **list, t_list *elem)
 {
 	t_list	*aux;
 
 	if (list && *list && elem)
 	{
 		if (*list == elem)
-			ll_remove_first(list);
+			lst_remove_first(list);
 		else
 		{
 			aux = *list;
@@ -62,14 +62,14 @@ void	ll_remove(t_list **list, t_list *elem)
  * 
  * @param list 	Pointer to the first element of the list.
  */
-void	ll_remove_last(t_list **list)
+void	lst_remove_last(t_list **list)
 {
 	t_list	*aux;
 
 	if (list && *list)
 	{
 		if ((*list)->next == NULL)
-			ll_remove_first(list);
+			lst_remove_first(list);
 		else
 		{
 			aux = *list;
@@ -89,7 +89,7 @@ void	ll_remove_last(t_list **list)
  * 
  * @return	Number of elements deleted.
  */
-int	ll_purge(t_list **list, void *data)
+int	lst_purge(t_list **list, void *data)
 {
 	t_list	*aux;
 	int		count;
@@ -118,7 +118,7 @@ int	ll_purge(t_list **list, void *data)
  * 
  * @param list 	Pointer to the first element of the list.
  */
-void	ll_clear(t_list **list)
+void	lst_clear(t_list **list)
 {
 	t_list	*aux;
 

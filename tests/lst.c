@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 17:32:56 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/22 12:42:07 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/22 12:48:41 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	status(char *msg, t_list *lst, unsigned int spc)
 	i = 0;
 	ft_putstr_fd(msg, 1);
 	ft_putstr_fd("\t`", 1);
-	ll_print(lst);
+	lst_print(lst);
 	ft_putstr_fd("`\n", 1);
 	while (i++ < spc)
 		ft_putchar_fd('\n', 1);
@@ -30,51 +30,51 @@ void	test_addition(t_list **list)
 	t_list	*tmp;
 
 	status("**Sea la lista:**", *list, 1);
-	ll_add_first(list, ll_new("antgalan"));
+	lst_add_first(list, lst_new("antgalan"));
 	status("Se añade 'antgalan' al principio:", *list, 0);
-	ll_add_first(list, ll_new("ernesmar"));
+	lst_add_first(list, lst_new("ernesmar"));
 	status("Se añade 'ernesmar' al principio:", *list, 1);
-	ll_add_after(ll_search(*list, "ernesmar"), ll_new("yfuentes"));
+	lst_add_after(lst_search(*list, "ernesmar"), lst_new("yfuentes"));
 	status("Se añade 'yfuentes' después de 'ernesmar':", *list, 0);
-	ll_add_after(ll_search(*list, "antgalan"), ll_new("abello-r"));
+	lst_add_after(lst_search(*list, "antgalan"), lst_new("abello-r"));
 	status("Se añade 'abello-r' después de 'antgalan':", *list, 1);
-	ll_add_last(list, ll_new("pmarquez"));
+	lst_add_last(list, lst_new("pmarquez"));
 	status("Se añade 'pmarquez' al final:", *list, 0);
-	ll_add_last(list, ll_new("asolano-"));
+	lst_add_last(list, lst_new("asolano-"));
 	status("Se añade 'asolano-' al final:", *list, 2);
 	tmp = NULL;
 	status("**Sea la lista (constante):**", tmp, 1);
-	ll_add_first(&tmp, ll_new("antgalan"));
+	lst_add_first(&tmp, lst_new("antgalan"));
 	status("Se añade 'antgalan' al principio:", tmp, 1);
 	tmp = NULL;
-	ll_add_last(&tmp, ll_new("antgalan"));
+	lst_add_last(&tmp, lst_new("antgalan"));
 	status("Se añade 'antgalan' al final:", tmp, 1);
 	tmp = NULL;
-	ll_add_after(ll_search(tmp, "antgalan"), ll_new("abello-r"));
+	lst_add_after(lst_search(tmp, "antgalan"), lst_new("abello-r"));
 	status("Se añade 'abello-r' después de 'antgalan':", tmp, 3);
 }
 
 void	test_stats(t_list *list)
 {
-	ll_add_after(ll_search(list, "yfuentes"), ll_new("ernesmar"));
+	lst_add_after(lst_search(list, "yfuentes"), lst_new("ernesmar"));
 	status("**Sea la lista:**", list, 2);
 	ft_putstr_fd("El primer elemento:\t", 1);
-	if (ll_first(list))
-		ft_putendl_fd(ll_first(list)->content, 1);
+	if (lst_first(list))
+		ft_putendl_fd(lst_first(list)->content, 1);
 	else
 		ft_putendl_fd("No existe", 1);
 	ft_putstr_fd("El último elemento:\t", 1);
-	if (ll_last(list))
-		ft_putendl_fd(ll_last(list)->content, 1);
+	if (lst_last(list))
+		ft_putendl_fd(lst_last(list)->content, 1);
 	else
 		ft_putendl_fd("No existe", 1);
 	ft_putstr_fd("\n¿Está 'antgalan'?:\t", 1);
-	if (ll_search(list, "antgalan"))
+	if (lst_search(list, "antgalan"))
 		ft_putendl_fd("Sí", 1);
 	else
 		ft_putendl_fd("No", 1);
 	ft_putstr_fd("¿Está 'sr-galan'?:\t", 1);
-	if (ll_search(list, "srgalan"))
+	if (lst_search(list, "srgalan"))
 		ft_putendl_fd("Sí", 1);
 	else
 		ft_putendl_fd("No", 1);
@@ -84,15 +84,15 @@ void	test_stats(t_list *list)
 void	test_deletion(t_list **list)
 {
 	status("**Sea la lista:**", *list, 1);
-	ll_purge(list, "ernesmar");
+	lst_purge(list, "ernesmar");
 	status("Se purga *ernesmar*:", *list, 1);
-	ll_remove_first(list);
+	lst_remove_first(list);
 	status("Se elimina el primer elemento:", *list, 0);
-	ll_remove_last(list);
+	lst_remove_last(list);
 	status("Se elimina el último elemento:", *list, 1);
-	ll_remove(list, ll_search(*list, "abello-r"));
+	lst_remove(list, lst_search(*list, "abello-r"));
 	status("Se elimina 'abello-r':", *list, 1);
-	ll_clear(list);
+	lst_clear(list);
 	status("Se vacía la lista:", *list, 1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 01:18:42 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/19 21:12:06 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/22 12:48:41 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
  * @return 	1 if the list is empty;
  *          0 otherwise.
  */
-int	ll_empty(t_list *list)
+int	lst_empty(t_list *list)
 {
 	return (list == NULL);
 }
@@ -32,7 +32,7 @@ int	ll_empty(t_list *list)
  * 
  * @return  The number of elements in the list.
  */
-int	ll_size(t_list *list)
+int	lst_size(t_list *list)
 {
 	int	size;
 
@@ -52,7 +52,7 @@ int	ll_size(t_list *list)
  * 
  * @return  Pointer to the first element of the list.
  */
-t_list	*ll_first(t_list *list)
+t_list	*lst_first(t_list *list)
 {
 	return (list);
 }
@@ -62,9 +62,9 @@ t_list	*ll_first(t_list *list)
  * 
  * @param list	Pointer to the first element of the list.
  */
-t_list	*ll_last(t_list *list)
+t_list	*lst_last(t_list *list)
 {
-	if (!ll_empty(list))
+	if (!lst_empty(list))
 	{
 		while (list->next)
 			list = list->next;
@@ -81,7 +81,7 @@ t_list	*ll_last(t_list *list)
  * @return  Pointer to the element if found;
  *          NULL otherwise.
  */
-t_list	*ll_search(t_list *list, void *data)
+t_list	*lst_search(t_list *list, void *data)
 {
 	while (list)
 	{

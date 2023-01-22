@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:00 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/19 21:11:53 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/22 12:48:36 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  * 
  * @return 	Pointer to the new element.
  */
-t_list	*ll_new(void *data)
+t_list	*lst_new(void *data)
 {
 	t_list	*new;
 
@@ -37,7 +37,7 @@ t_list	*ll_new(void *data)
  * @param lst 	Pointer to the first element of the list.
  * @param new 	Pointer to the new element to be added.
  */
-void	ll_add_first(t_list **lst, t_list *new)
+void	lst_add_first(t_list **lst, t_list *new)
 {
 	if (lst && new)
 	{
@@ -52,7 +52,7 @@ void	ll_add_first(t_list **lst, t_list *new)
  * @param elem	Pointer to the element after which the new element will be added.
  * @param new 	Pointer to the new element to be added.
  */
-void	ll_add_after(t_list *elem, t_list *new)
+void	lst_add_after(t_list *elem, t_list *new)
 {
 	if (new && elem)
 	{
@@ -67,7 +67,7 @@ void	ll_add_after(t_list *elem, t_list *new)
  * @param lst 	Pointer to the first element of the list.
  * @param new 	Pointer to the new element to be added.
  */
-void	ll_add_last(t_list **lst, t_list *new)
+void	lst_add_last(t_list **lst, t_list *new)
 {
 	t_list	*last;
 
@@ -77,7 +77,7 @@ void	ll_add_last(t_list **lst, t_list *new)
 			*lst = new;
 		else
 		{
-			last = ll_last(*lst);
+			last = lst_last(*lst);
 			last->next = new;
 		}
 	}
