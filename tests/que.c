@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 17:32:56 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/22 12:50:18 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/22 13:01:23 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void	status(char *msg, t_queue *lst, unsigned int spc)
 
 void	test_basics(t_queue **queue)
 {
+	void	*tmp;
+
 	status("**Sea la cola:**", *queue, 1);
 	que_enqueue(queue, "antgalan");
 	status("Se encola 'antgalan':", *queue, 0);
@@ -38,14 +40,18 @@ void	test_basics(t_queue **queue)
 	status("Se encola 'antgalan':", *queue, 0);
 	que_enqueue(queue, "pmarquez");
 	status("Se encola 'pmarquez':", *queue, 1);
-	que_dequeue(queue);
+	tmp = que_dequeue(queue);
 	status("Se desencola un elemento:", *queue, 0);
-	que_dequeue(queue);
-	status("Se desencola un elemento:", *queue, 1);
+	ft_putstr_fd("\tDesencolado: ", 1);
+	ft_putendl_fd(tmp, 1);
+	ft_putchar_fd('\n', 1);
 	que_clear(queue);
 	status("Se vacía la cola:", *queue, 1);
-	que_dequeue(queue);
-	status("Se desencola un elemento:", *queue, 3);
+	tmp = que_dequeue(queue);
+	status("Se desencola un elemento:", *queue, 0);
+	ft_putstr_fd("\tDesencolado: ", 1);
+	ft_putendl_fd(tmp, 1);
+	ft_putstr_fd("\n\n\n", 1);
 }
 
 void	test_stats(t_queue *queue)

@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/22 12:50:18 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/22 12:54:07 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,16 +56,21 @@ void	que_enqueue(t_queue **queue, void *data)
  * @brief   Removes the first node of the queue.
  *
  * @param queue	Pointer to the first element of the queue.
+ * 
+ * @return  Pointer to the data stored in the removed node.
  */
-void	que_dequeue(t_queue **queue)
+void	*que_dequeue(t_queue **queue)
 {
 	t_queue	*aux;
+	void	*data;
 
 	if (que_empty(*queue))
-		return ;
+		return (NULL);
 	aux = *queue;
 	*queue = (*queue)->next;
+	data = aux->data;
 	free(aux);
+	return (data);
 }
 
 /**

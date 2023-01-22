@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/22 12:52:35 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/22 12:54:29 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ t_queue	*que_new(void *data);
 void	que_enqueue(t_queue **queue, void *data);
 
 // Deletes an element from the queue.
-void	que_dequeue(t_queue **queue);
+void	*que_dequeue(t_queue **queue);
 void	que_clear(t_queue **queue);
 
 // Check some data from the queue.
