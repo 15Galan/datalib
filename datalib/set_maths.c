@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 21:48:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/20 13:00:55 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/22 12:35:28 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ t_set	*set_union(t_set *set1, t_set *set2)
 	return (new);
 }
 
-t_set	*set_intersection(t_set *set1, t_set *set2)
+t_set	*set_inter(t_set *set1, t_set *set2)
 {
 	t_set	*aux;
 	t_set	*new;
@@ -49,7 +49,7 @@ t_set	*set_intersection(t_set *set1, t_set *set2)
 	return (new);
 }
 
-t_set	*set_difference(t_set *set1, t_set *set2)
+t_set	*set_diff(t_set *set1, t_set *set2)
 {
 	t_set	*aux;
 	t_set	*new;

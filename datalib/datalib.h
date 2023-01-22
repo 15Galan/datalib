@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/20 13:01:16 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/22 12:35:28 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -175,8 +175,8 @@ void	set_remove(t_set **set, void *data);
 
 // Modifiers operations.
 t_set	*set_union(t_set *set1, t_set *set2);
-t_set	*set_intersection(t_set *set1, t_set *set2);
-t_set	*set_difference(t_set *set1, t_set *set2);
+t_set	*set_inter(t_set *set1, t_set *set2);
+t_set	*set_diff(t_set *set1, t_set *set2);
 
 // Check some data from the set.
 int		set_empty(t_set *set);
