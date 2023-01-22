@@ -2,12 +2,12 @@
 
 # Names
 LIBRARY = 	DS
-TEST_01	=	test_ll
-TEST_02	=	test_dll
-TEST_03	=	test_qu
-TEST_04	=	test_sk
-TEST_05	=	test_st
-TEST_06	=	test_bt
+TEST_01	=	lst
+TEST_02	=	dll
+TEST_03	=	que
+TEST_04	=	stk
+TEST_05	=	set
+TEST_06	=	bst
 
 # Instructions
 CC 		=	gcc -Wall -Wextra -Werror
@@ -32,7 +32,7 @@ clean:
 	@echo "Object files removed."
 
 fclean: clean
-	@$(RM) $(LIBRARY) $(TEST)
+	@$(RM) $(LIBRARY) *.md
 	@echo "File '$(LIBRARY)' removed."
 
 re: fclean all
@@ -60,5 +60,16 @@ norm:
 	@norminette $(SOURCES)
 
 test: all
-	@$(CC) tests/dll.c $(LIBRARY) -o $(TEST_02)
-	@echo "Test file created."
+	@$(CC) tests/$(TEST_01).c $(LIBRARY) -o $(TEST_01).out
+	@$(CC) tests/$(TEST_02).c $(LIBRARY) -o $(TEST_02).out
+	@$(CC) tests/$(TEST_03).c $(LIBRARY) -o $(TEST_03).out
+	@$(CC) tests/$(TEST_04).c $(LIBRARY) -o $(TEST_04).out
+	@$(CC) tests/$(TEST_05).c $(LIBRARY) -o $(TEST_05).out
+	@echo "Test files created."
+	@./$(TEST_01).out > $(TEST_01).md
+	@./$(TEST_02).out > $(TEST_02).md
+	@./$(TEST_03).out > $(TEST_03).md
+	@./$(TEST_04).out > $(TEST_04).md
+	@./$(TEST_05).out > $(TEST_05).md
+	@echo "Test files executed, results saved in '.md' files."
+	@$(RM) *.out
