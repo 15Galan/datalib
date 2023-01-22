@@ -7,7 +7,6 @@ TEST_02	=	dll
 TEST_03	=	que
 TEST_04	=	stk
 TEST_05	=	set
-TEST_06	=	bst
 
 # Instructions
 CC 		=	gcc -Wall -Wextra -Werror
@@ -59,7 +58,7 @@ see:
 norm:
 	@norminette $(SOURCES)
 
-test: all
+tests: all
 	@$(CC) tests/$(TEST_01).c $(LIBRARY) -o $(TEST_01).out
 	@$(CC) tests/$(TEST_02).c $(LIBRARY) -o $(TEST_02).out
 	@$(CC) tests/$(TEST_03).c $(LIBRARY) -o $(TEST_03).out

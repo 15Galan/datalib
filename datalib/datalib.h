@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/22 13:41:02 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/22 16:44:51 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,36 +133,6 @@ void	*stk_peek(t_stack *stack);
 
 // Print the stack.
 void	stk_print(t_stack *stack);
-
-/** BINARY TREE **/
-
-// Struct for the elements of the tree.
-typedef struct s_tree
-{
-	void			*data;
-	struct s_tree	*left;
-	struct s_tree	*right;
-}	t_tree;
-
-// Creates one o more elements for the tree.
-t_tree	*bt_new(void *data);
-void	bt_add(t_tree *tree, void *data);
-void	bt_add_left(t_tree *tree, void *data);
-void	bt_add_right(t_tree *tree, void *data);
-
-// Deletes one or more elements from the tree.
-void	bt_remove(t_tree *tree, void *data);
-void	bt_clear(t_tree *tree);
-
-// Check some data from the tree.
-int		bt_empty(t_tree *tree);
-int		bt_leaf(t_tree *tree);
-int		bt_height(t_tree *tree);
-int		bt_depth(t_tree *tree);
-int		bt_search(t_tree *tree, void *data);
-
-// Print the tree.
-void	bt_print(t_tree *tree);
 
 /** SET **/
 
