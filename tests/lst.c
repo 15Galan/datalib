@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 17:32:56 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/22 12:48:41 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/22 13:41:02 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,12 @@ void	test_stats(t_list *list)
 	status("**Sea la lista:**", list, 2);
 	ft_putstr_fd("El primer elemento:\t", 1);
 	if (lst_first(list))
-		ft_putendl_fd(lst_first(list)->content, 1);
+		ft_putendl_fd(lst_first(list)->data, 1);
 	else
 		ft_putendl_fd("No existe", 1);
 	ft_putstr_fd("El último elemento:\t", 1);
 	if (lst_last(list))
-		ft_putendl_fd(lst_last(list)->content, 1);
+		ft_putendl_fd(lst_last(list)->data, 1);
 	else
 		ft_putendl_fd("No existe", 1);
 	ft_putstr_fd("\n¿Está 'antgalan'?:\t", 1);

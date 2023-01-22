@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 01:29:12 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/22 12:48:10 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/22 13:41:02 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	lst_print(t_list *lst)
 	ft_putstr_fd("[ ", 1);
 	while (lst)
 	{
-		ft_putstr_fd(lst->content, 1);
+		ft_putstr_fd(lst->data, 1);
 		if (lst->next)
 			ft_putstr_fd(" -> ", 1);
 		lst = lst->next;

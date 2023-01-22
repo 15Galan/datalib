@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 01:18:42 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/22 12:48:41 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/22 13:41:02 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ t_list	*lst_search(t_list *list, void *data)
 {
 	while (list)
 	{
-		if (list->content == data)
+		if (list->data == data)
 			return (list);
 		list = list->next;
 	}

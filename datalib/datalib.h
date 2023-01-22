@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/22 12:54:29 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/22 13:41:02 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@
 /**	LINKED LIST	**/
 
 // Struct for the elements of the list.
+typedef struct s_list
+{
+	void			*data;
+	struct s_list	*next;
+}	t_list;
 
 // Creates one or more elements for the list.
 t_list	*lst_new(void *data);

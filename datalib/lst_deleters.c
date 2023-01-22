@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 00:58:54 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/22 12:48:02 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/22 13:41:02 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ int	lst_purge(t_list **list, void *data)
 	{
 		while (*list)
 		{
-			if ((*list)->content == data)
+			if ((*list)->data == data)
 			{
 				aux = (*list)->next;
 				free(*list);

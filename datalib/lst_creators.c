@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:00 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/22 12:48:36 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/22 13:41:02 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_list	*lst_new(void *data)
 	new = (t_list *) malloc(sizeof(t_list));
 	if (!new)
 		return (NULL);
-	new->content = data;
+	new->data = data;
 	new->next = NULL;
 	return (new);
 }
