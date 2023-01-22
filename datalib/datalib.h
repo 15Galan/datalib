@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/22 12:48:41 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/22 12:50:18 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,21 +89,21 @@ typedef struct s_queue
 }	t_queue;
 
 // Creates an element for the queue.
-t_queue	*qu_new(void *data);
-void	qu_enqueue(t_queue **queue, void *data);
+t_queue	*que_new(void *data);
+void	que_enqueue(t_queue **queue, void *data);
 
 // Deletes an element from the queue.
-void	qu_dequeue(t_queue **queue);
-void	qu_clear(t_queue **queue);
+void	que_dequeue(t_queue **queue);
+void	que_clear(t_queue **queue);
 
 // Check some data from the queue.
-int		qu_empty(t_queue *queue);
-int		qu_size(t_queue *queue);
-t_queue	*qu_first(t_queue *queue);
-t_queue	*qu_last(t_queue *queue);
+int		que_empty(t_queue *queue);
+int		que_size(t_queue *queue);
+t_queue	*que_first(t_queue *queue);
+t_queue	*que_last(t_queue *queue);
 
 // Print the queue.
-void	qu_print(t_queue *queue);
+void	que_print(t_queue *queue);
 
 /**	STACK	**/
 

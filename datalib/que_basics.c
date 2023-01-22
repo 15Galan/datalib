@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   que_creators.c                                     :+:      :+:    :+:   */
+/*   que_basics.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/22 02:07:39 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/22 12:50:18 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  *
  * @return  Pointer to the new node.
  */
-t_queue	*qu_new(void *data)
+t_queue	*que_new(void *data)
 {
 	t_queue	*new;
 
@@ -37,19 +37,19 @@ t_queue	*qu_new(void *data)
  * @param queue	Pointer to the first element of the queue.
  * @param data	Pointer to the data to be stored in the node.
  */
-void	qu_enqueue(t_queue **queue, void *data)
+void	que_enqueue(t_queue **queue, void *data)
 {
 	t_queue	*new;
 
-	new = qu_new(data);
+	new = que_new(data);
 	if (!new)
 		return ;
-	if (qu_empty(*queue))
+	if (que_empty(*queue))
 	{
 		*queue = new;
 		return ;
 	}
-	qu_last(*queue)->next = new;
+	que_last(*queue)->next = new;
 }
 
 /**
@@ -57,11 +57,11 @@ void	qu_enqueue(t_queue **queue, void *data)
  *
  * @param queue	Pointer to the first element of the queue.
  */
-void	qu_dequeue(t_queue **queue)
+void	que_dequeue(t_queue **queue)
 {
 	t_queue	*aux;
 
-	if (qu_empty(*queue))
+	if (que_empty(*queue))
 		return ;
 	aux = *queue;
 	*queue = (*queue)->next;
@@ -73,8 +73,8 @@ void	qu_dequeue(t_queue **queue)
  *
  * @param queue	Pointer to the first element of the queue.
  */
-void	qu_clear(t_queue **queue)
+void	que_clear(t_queue **queue)
 {
-	while (!qu_empty(*queue))
-		qu_dequeue(queue);
+	while (!que_empty(*queue))
+		que_dequeue(queue);
 }

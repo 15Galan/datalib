@@ -6,13 +6,13 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/19 21:12:15 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/22 12:49:57 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "datalib.h"
 
-void	qu_print(t_queue *queue)
+void	que_print(t_queue *queue)
 {
 	t_queue	*aux;
 

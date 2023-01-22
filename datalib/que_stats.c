@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/19 21:12:18 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/22 12:50:24 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  * @return	1 if the queue is empty;
  * 			0 otherwise.
  */
-int	qu_empty(t_queue *queue)
+int	que_empty(t_queue *queue)
 {
 	return (queue == NULL);
 }
@@ -31,7 +31,7 @@ int	qu_empty(t_queue *queue)
  *
  * @return  Number of nodes in the queue.
  */
-int	qu_size(t_queue *queue)
+int	que_size(t_queue *queue)
 {
 	int	i;
 
@@ -51,7 +51,7 @@ int	qu_size(t_queue *queue)
  *
  * @return	Pointer to the first node of the queue.
  */
-t_queue	*qu_first(t_queue *queue)
+t_queue	*que_first(t_queue *queue)
 {
 	return (queue);
 }
@@ -63,7 +63,7 @@ t_queue	*qu_first(t_queue *queue)
  *
  * @return	Pointer to the last node of the queue.
  */
-t_queue	*qu_last(t_queue *queue)
+t_queue	*que_last(t_queue *queue)
 {
 	while (queue && queue->next)
 		queue = queue->next;
@@ -79,7 +79,7 @@ t_queue	*qu_last(t_queue *queue)
  * @return	Pointer to the node containing the data;
  * 			NULL if the data is not found.
  */
-t_queue	*qu_search(t_queue *queue, void *data)
+t_queue	*que_search(t_queue *queue, void *data)
 {
 	while (queue)
 	{
