@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/22 17:59:04 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/01/23 00:29:18 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,11 +93,9 @@ typedef struct s_queue
 	struct s_queue	*next;
 }	t_queue;
 
-// Creates an element for the queue.
+// Basic operations.
 t_queue	*que_new(void *data);
 void	que_enqueue(t_queue **queue, void *data);
-
-// Deletes an element from the queue.
 void	*que_dequeue(t_queue **queue);
 void	que_clear(t_queue **queue);
 
@@ -119,7 +117,7 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-// Modifies the stack.
+// Basic operations.
 t_stack	*stk_new(void *data);
 void	stk_push(t_stack **stack, void *data);
 t_stack	*stk_pop(t_stack **stack);
@@ -148,7 +146,7 @@ t_set	*set_new(void *data);
 void	set_add(t_set **set, void *data);
 void	set_remove(t_set **set, void *data);
 
-// Modifiers operations.
+// Math operations.
 t_set	*set_union(t_set *set1, t_set *set2);
 t_set	*set_inter(t_set *set1, t_set *set2);
 t_set	*set_diff(t_set *set1, t_set *set2);
