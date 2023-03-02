@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/23 00:29:18 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/03/02 20:10:27 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,39 +16,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include "../Libft/libft.h"
-
-/**	LINKED LIST	**/
-
-// Struct for the elements of the list.
-typedef struct s_list
-{
-	void			*data;
-	struct s_list	*next;
-}	t_list;
-
-// Creates one or more elements for the list.
-t_list	*lst_new(void *data);
-void	lst_add_first(t_list **list, t_list *elem);
-void	lst_add_after(t_list *elem, t_list *new);
-void	lst_add_last(t_list **list, t_list *elem);
-int		ll_replace(t_list *elem, void *new_data);
-
-// Deletes one or more elements from the list.
-void	lst_remove_first(t_list **list);
-void	lst_remove(t_list **list, t_list *elem);
-void	lst_remove_last(t_list **list);
-int		lst_purge(t_list **list, void *data);
-void	lst_clear(t_list **list);
-
-// Check some data from the list.
-int		lst_empty(t_list *list);
-int		lst_size(t_list *list);
-t_list	*lst_first(t_list *list);
-t_list	*lst_last(t_list *list);
-t_list	*lst_search(t_list *list, void *data);
-
-// Print the list.
-void	lst_print(t_list *list);
 
 /**	DOUBLY LINKED LIST	**/
 
