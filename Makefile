@@ -30,7 +30,7 @@ clean:
 	@echo "Object files removed."
 
 fclean: clean
-	@$(RM) $(LIBRARY) *.md
+	@$(RM) $(LIBRARY) $(wildcard tests/*.md)
 	@echo "File '$(LIBRARY)' removed."
 
 re: fclean all
@@ -63,9 +63,10 @@ tests: all
 	@$(CC) tests/$(TEST_03).c $(LIBRARY) -o $(TEST_03).out
 	@$(CC) tests/$(TEST_04).c $(LIBRARY) -o $(TEST_04).out
 	@echo "Test files created."
-	@./$(TEST_01).out > $(TEST_01).md
-	@./$(TEST_02).out > $(TEST_02).md
-	@./$(TEST_03).out > $(TEST_03).md
-	@./$(TEST_04).out > $(TEST_04).md
-	@echo "Test files executed, results saved in '.md' files."
+	@./$(TEST_01).out > tests/$(TEST_01).md
+	@./$(TEST_02).out > tests/$(TEST_02).md
+	@./$(TEST_03).out > tests/$(TEST_03).md
+	@./$(TEST_04).out > tests/$(TEST_04).md
+	@echo "Test files executed."
+	@echo "Results saved in 'tests/'."
 	@$(RM) *.out
