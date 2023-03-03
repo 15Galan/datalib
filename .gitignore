@@ -77,4 +77,4 @@ cmake-build-*/
 DS
 
 # Archivos de test
-*.md
+tests/*.md
