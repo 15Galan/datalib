@@ -112,6 +112,7 @@ typedef struct s_set
 t_set	*set_new(void *data);
 void	set_add(t_set **set, void *data);
 void	set_remove(t_set **set, void *data);
+void	set_clear(t_set **set);
 
 // Math operations.
 t_set	*set_union(t_set *set1, t_set *set2);

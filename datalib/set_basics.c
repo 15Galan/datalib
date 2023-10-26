@@ -60,3 +60,17 @@ void	set_remove(t_set **set, void *data)
 		aux = aux->next;
 	}
 }
+
+void	set_clear(t_set **set)
+{
+	t_set	*aux;
+
+	if (set_empty(*set))
+		return ;
+	while (*set)
+	{
+		aux = *set;
+		*set = (*set)->next;
+		free(aux);
+	}
+}
