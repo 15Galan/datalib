@@ -6,16 +6,19 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/03/02 20:10:27 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/28 20:52:22 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DATALIB_H
 # define DATALIB_H
 
-# include <unistd.h>
 # include <stdlib.h>
-# include "../Libft/libft.h"
+# include <unistd.h>
+
+/** GENERAL PURPOSE	**/
+
+int		len(void *data);
 
 /**	DOUBLY LINKED LIST	**/
 
