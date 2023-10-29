@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/28 20:52:22 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/29 11:46:43 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,40 @@ t_dlist	*dll_search(t_dlist *list, void *data);
 
 // Print the list.
 void	dll_print(t_dlist *list);
+
+/** CIRCULAR DOUBLY LINKED LIST **/
+
+// Struct for the elements of the list.
+typedef struct s_cdll
+{
+	void			*data;
+	struct s_cdll	*prev;
+	struct s_cdll	*next;
+}	t_cdll;
+
+// Creates one or more elements for the list.
+t_cdll	*cdll_new(void *data);
+void	cdll_add_first(t_cdll **list, t_cdll *elem);
+void	cdll_add_before(t_cdll *elem, t_cdll *new);
+void	cdll_add_after(t_cdll *elem, t_cdll *new);
+void	cdll_add_last(t_cdll **list, t_cdll *elem);
+
+// Deletes one or more elements from the list.
+void	cdll_remove_first(t_cdll **list);
+void	cdll_remove(t_cdll **list, t_cdll *elem);
+void	cdll_remove_last(t_cdll **list);
+void	cdll_purge(t_cdll **list, void *data);
+void	cdll_clear(t_cdll **list);
+
+// Check some data from the list.
+int		cdll_empty(t_cdll *list);
+int		cdll_size(t_cdll *list);
+t_cdll	*cdll_first(t_cdll *list);
+t_cdll	*cdll_last(t_cdll *list);
+t_cdll	*cdll_search(t_cdll *list, void *data);
+
+// Print the list.
+void	cdll_print(t_cdll *list);
 
 /**	QUEUE	**/
 
