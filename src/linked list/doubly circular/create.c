@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cdll_creators.c                                    :+:      :+:    :+:   */
+/*   create.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:12:03 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/28 22:59:07 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 17:07:39 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "datalib.h"
+#include "cdll.h"
 
 /**
- * @brief	Allocates memory for a new node and initializes it with the given
- * 			data.
- * 
- * @param data	Data to be stored in the new node.
-
- * @return	Pointer to the new node.
+ * @brief   Creates a new item with the given data.
+ *
+ * @param data  The data to be stored in the item.
+ *
+ * @return  The new item.
  */
-t_cdll	*cdll_new(void *data)
+t_n2	*cdll_new(void *data)
 {
-	t_cdll	*new;
+	t_n2	*new;
 
-	new = (t_cdll *) malloc(sizeof(t_cdll));
+	new = (t_n2 *) malloc(sizeof(t_n2));
 	if (!new)
 		return (NULL);
 	new->data = data;
@@ -34,68 +33,74 @@ t_cdll	*cdll_new(void *data)
 }
 
 /**
- * @brief	Adds a new node to the beginning of the list.
- * 
- * @param list	Pointer to the first element of the list.
- * @param elem	Pointer to the new node.
+ * @brief   Adds a new item at the beginning of the list.
+ *
+ * @param list	The first item of the list.
+ * @param item	The new item to be added.
  */
-void	cdll_add_first(t_cdll **list, t_cdll *elem)
+void	cdll_add_first(t_n2 **list, t_n2 *item)
 {
-	if (cdll_empty(*list))
-		*list = elem;
+	if (!item)
+		return ;
+	if (cdll_is_empty(*list))
+		*list = item;
 	else
 	{
-		elem->next = *list;
-		elem->prev = (*list)->prev;
-		(*list)->prev->next = elem;
-		(*list)->prev = elem;
-		*list = elem;
+		item->next = *list;
+		item->prev = (*list)->prev;
+		(*list)->prev->next = item;
+		(*list)->prev = item;
+		*list = item;
 	}
 }
 
 /**
- * @brief	Adds a new node before a given node.
- * 
- * @param elem	Pointer to the node before which the new node will be added.
- * @param new	Pointer to the new node.
+ * @brief   Adds a new item before the given item.
+ *
+ * @param list		The first item of the list.
+ * @param new_item  The new item to be added.
  */
-void	cdll_add_before(t_cdll *elem, t_cdll *new)
+void	cdll_add_before(t_n2 *item, t_n2 *new_item)
 {
-	new->next = elem;
-	new->prev = elem->prev;
-	elem->prev->next = new;
-	elem->prev = new;
+	if (!item || !new_item)
+		return ;
+	new_item->next = item;
+	new_item->prev = item->prev;
+	item->prev->next = new_item;
+	item->prev = new_item;
 }
 
 /**
- * @brief	Adds a new node after a given node.
- * 
- * @param elem	Pointer to the node after which the new node will be added.
- * @param new	Pointer to the new node.
+ * @brief   Adds a new item after the given item.
+ *
+ * @param list		The first item of the list.
+ * @param new_item  The new item to be added.
  */
-void	cdll_add_after(t_cdll *elem, t_cdll *new)
+void	cdll_add_after(t_n2 *item, t_n2 *new_item)
 {
-	new->next = elem->next;
-	new->prev = elem;
-	elem->next->prev = new;
-	elem->next = new;
+	if (!item || !new_item)
+		return ;
+	new_item->next = item->next;
+	new_item->prev = item;
+	item->next->prev = new_item;
+	item->next = new_item;
 }
 
 /**
- * @brief	Adds a new node to the end of the list.
- * 
- * @param list	Pointer to the first element of the list.
- * @param elem	Pointer to the new node.
+ * @brief   Adds a new item at the end of the list.
+ *
+ * @param list	The first item of the list.
+ * @param item	The new item to be added.
  */
-void	cdll_add_last(t_cdll **list, t_cdll *elem)
+void	cdll_add_last(t_n2 **list, t_n2 *item)
 {
-	if (cdll_empty(*list))
-		*list = elem;
+	if (cdll_is_empty(*list))
+		*list = item;
 	else
 	{
-		elem->next = *list;
-		elem->prev = (*list)->prev;
-		(*list)->prev->next = elem;
-		(*list)->prev = elem;
+		item->next = *list;
+		item->prev = (*list)->prev;
+		(*list)->prev->next = item;
+		(*list)->prev = item;
 	}
 }

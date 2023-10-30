@@ -1,43 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cdll_stats.c                                       :+:      :+:    :+:   */
+/*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 22:28:07 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/29 11:57:41 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 17:15:34 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "datalib.h"
+#include "cdll.h"
 
 /**
  * @brief	Checks if the list is empty.
  *
- * @param list	Pointer to the first element of the list.
+ * @param list	The first element of the list.
  *
  * @return	1 if the list is empty;
  * 			0 otherwise.
  */
-int	cdll_empty(t_cdll *list)
+int	cdll_is_empty(t_n2 *list)
 {
 	return (list == NULL);
 }
 
 /**
- * @brief   Counts the number of nodes in the list.
+ * @brief   Counts the number of items in the list.
  *
- * @param list   Pointer to the first element of the list.
+ * @param list   The first element of the list.
  *
- * @return  Number of nodes in the list.
+ * @return  Number of items in the list.
  */
-int	cdll_size(t_cdll *list)
+int	cdll_size(t_n2 *list)
 {
 	int	i;
 
 	i = 0;
-	if (cdll_empty(list))
+	if (cdll_is_empty(list))
 		return (0);
 	while (list->next && list->next != list)
 	{
@@ -48,46 +48,43 @@ int	cdll_size(t_cdll *list)
 }
 
 /**
- * @brief   Returns the first node of the list.
+ * @brief   Gets the first item of the list.
  *
- * @param list	Pointer to an element of the list.
+ * @param list	Any item of the list.
  *
- * @return	Pointer to the first node of the list.
+ * @return	The first item of the list.
  */
-t_cdll	*cdll_first(t_cdll *list)
+t_n2	*cdll_first(t_n2 *list)
 {
-	if (cdll_empty(list))
-		return (NULL);
 	while (list->prev)
 		list = list->prev;
 	return (list);
 }
 
 /**
- * @brief   Returns the last node of the list.
+ * @brief   Gets the last item of the list.
  *
- * @param list	Pointer to an element of the list.
+ * @param list	Any item of the list.
  *
- * @return	Pointer to the last node of the list.
+ * @return	The last item of the list.
  */
-t_cdll	*cdll_last(t_cdll *list)
+t_n2	*cdll_last(t_n2 *list)
 {
-	if (cdll_empty(list))
-		return (NULL);
 	while (list->next && list->next != list)
 		list = list->next;
 	return (list);
 }
 
 /**
- * @brief   Returns the nth node of the list.
+ * @brief	Searches an item in the list.
  *
- * @param list	Pointer to the first element of the list.
+ * @param list	The first item of the list.
  * @param data	The data to search.
  *
- * @return	Pointer to the nth node of the list.
+ * @return	The item containing the data;
+ * 			NULL if the data is not found.
  */
-t_cdll	*cdll_search(t_cdll *list, void *data)
+t_n2	*cdll_search(t_n2 *list, void *data)
 {
 	while (list && list->next != list)
 	{
