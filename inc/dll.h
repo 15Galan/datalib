@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 11:38:18 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 16:47:21 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 17:38:38 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@
 
 t_n2	*dll_new(void *data);
 void	dll_add_first(t_n2 **list, t_n2 *item);
-void	dll_add_before(t_n2 *item, t_n2 *item);
-void	dll_add_after(t_n2 *item, t_n2 *item);
+void	dll_add_before(t_n2 *item, t_n2 *new_item);
+void	dll_add_after(t_n2 *item, t_n2 *new_item);
 void	dll_add_last(t_n2 **list, t_n2 *item);
 
 // Modifies list items
