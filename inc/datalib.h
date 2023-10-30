@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/29 11:46:43 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 11:58:22 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,44 +15,11 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include "dll.h"
 
 /** GENERAL PURPOSE	**/
 
 int		len(void *data);
-
-/**	DOUBLY LINKED LIST	**/
-
-// Struct for the elements of the list.
-typedef struct s_dlist
-{
-	void			*data;
-	struct s_dlist	*prev;
-	struct s_dlist	*next;
-}	t_dlist;
-
-// Creates one or more elements for the list.
-t_dlist	*dll_new(void *data);
-void	dll_add_first(t_dlist **list, t_dlist *elem);
-void	dll_add_after(t_dlist *elem, t_dlist *new);
-void	dll_add_last(t_dlist **list, t_dlist *elem);
-t_dlist	*dll_replace(t_dlist *elem, void *new_data);
-
-// Deletes one or more elements from the list.
-void	dll_remove_first(t_dlist **list);
-void	dll_remove(t_dlist **list, t_dlist *elem);
-void	dll_remove_last(t_dlist **list);
-void	dll_purge(t_dlist **list, void *data);
-void	dll_clear(t_dlist **list);
-
-// Check some data from the list.
-int		dll_empty(t_dlist *list);
-int		dll_size(t_dlist *list);
-t_dlist	*dll_first(t_dlist *list);
-t_dlist	*dll_last(t_dlist *list);
-t_dlist	*dll_search(t_dlist *list, void *data);
-
-// Print the list.
-void	dll_print(t_dlist *list);
 
 /** CIRCULAR DOUBLY LINKED LIST **/
 

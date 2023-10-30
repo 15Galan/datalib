@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dll_deleters.c                                     :+:      :+:    :+:   */
+/*   delete.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/19 21:11:41 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 13:22:54 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "datalib.h"
+#include "dll.h"
 
 /**
- * @brief   Removes the first node of the list.
+ * @brief   Removes the first item of the list.
  *
- * @param list	Pointer to the first element of the list.
+ * @param list	The first item of the list.
  */
-void	dll_remove_first(t_dlist **list)
+void	dll_remove_first(t_n2 **list)
 {
-	t_dlist	*aux;
+	t_n2	*aux;
 
-	if (dll_empty(*list))
+	if (dll_is_empty(*list))
 		return ;
 	aux = *list;
 	*list = (*list)->next;
@@ -31,34 +31,34 @@ void	dll_remove_first(t_dlist **list)
 }
 
 /**
- * @brief   Removes the given node from the list.
+ * @brief   Removes the given item from the list.
  *
- * @param list	Pointer to the first element of the list.
- * @param elem	Pointer to the element to be removed.
+ * @param list	The first item of the list.
+ * @param node	The item to be removed.
  */
-void	dll_remove(t_dlist **list, t_dlist *elem)
+void	dll_remove(t_n2 **list, t_n2 *node)
 {
-	if (dll_empty(*list))
+	if (dll_is_empty(*list))
 		return ;
-	if (elem->prev)
-		elem->prev->next = elem->next;
+	if (node->prev)
+		node->prev->next = node->next;
 	else
-		*list = elem->next;
-	if (elem->next)
-		elem->next->prev = elem->prev;
-	free(elem);
+		*list = node->next;
+	if (node->next)
+		node->next->prev = node->prev;
+	free(node);
 }
 
 /**
- * @brief   Removes the last node of the list.
+ * @brief   Removes the last item of the list.
  *
- * @param list	Pointer to the first element of the list.
+ * @param list	The first item of the list.
  */
-void	dll_remove_last(t_dlist **list)
+void	dll_remove_last(t_n2 **list)
 {
-	t_dlist	*aux;
+	t_n2	*aux;
 
-	if (dll_empty(*list))
+	if (dll_is_empty(*list))
 		return ;
 	aux = *list;
 	while (aux->next)
@@ -73,14 +73,14 @@ void	dll_remove_last(t_dlist **list)
 /**
  * @brief	Removes all the nodes with the given data.
  *
- * @param list	Pointer to the first element of the list.
- * @param data	Pointer to the data to be removed.
+ * @param list	The first item of the list.
+ * @param data	The data to be removed.
  */
-void	dll_purge(t_dlist **list, void *data)
+void	dll_purge(t_n2 **list, void *data)
 {
-	t_dlist	*aux;
+	t_n2	*aux;
 
-	if (dll_empty(*list))
+	if (dll_is_empty(*list))
 		return ;
 	aux = *list;
 	while (aux)
@@ -94,13 +94,13 @@ void	dll_purge(t_dlist **list, void *data)
 /**
  * @brief   Removes all the nodes of the list.
  *
- * @param list	Pointer to the first element of the list.
+ * @param list	The first item of the list.
  */
-void	dll_clear(t_dlist **list)
+void	dll_clear(t_n2 **list)
 {
-	t_dlist	*aux;
+	t_n2	*aux;
 
-	if (dll_empty(*list))
+	if (dll_is_empty(*list))
 		return ;
 	while (*list)
 	{
