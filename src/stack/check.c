@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stk_stats.c                                        :+:      :+:    :+:   */
+/*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/22 12:52:35 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 18:56:59 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "datalib.h"
+#include "stack.h"
 
 /**
  * @brief	Checks if the stack is empty.
  *
- * @param stack	Pointer to the stack.
+ * @param stack	The top item of the stack.
  *
  * @return	1 if the stack is empty;
  * 			0 otherwise.
  */
-int	stk_empty(t_stack *stack)
+int	stk_is_empty(t_n1 *stack)
 {
 	return (stack == NULL);
 }
 
 /**
- * @brief	Counts the number of elements in the stack.
+ * @brief	Counts the number of items in the stack.
  *
- * @param stack	Pointer to the stack.
+ * @param stack	The top item of the stack.
  *
- * @return	Number of elements in the stack.
+ * @return	Number of items in the stack.
  */
-int	stk_size(t_stack *stack)
+int	stk_size(t_n1 *stack)
 {
 	int	size;
 
@@ -46,31 +46,31 @@ int	stk_size(t_stack *stack)
 }
 
 /**
- * @brief	Checks the top element of the stack.
+ * @brief	Checks the top item of the stack.
  *
- * @param stack	Pointer to the stack.
+ * @param stack	The stack.
  *
- * @return 	Pointer to the top element;
+ * @return 	The top item;
  * 			NULL if the stack is empty.
  */
-t_stack	*stk_top(t_stack *stack)
+t_n1	*stk_top(t_n1 *stack)
 {
-	if (stk_empty(stack))
+	if (stk_is_empty(stack))
 		return (NULL);
 	return (stack);
 }
 
 /**
- * @brief	Checks the top element data of the stack.
+ * @brief	Checks the top item data of the stack.
  *
- * @param stack	Pointer to the stack.
+ * @param stack	The stack.
  *
- * @return	Pointer to the top element data;
+ * @return	The top item data;
  * 			NULL if the stack is empty.
  */
-void	*stk_peek(t_stack *stack)
+void	*stk_peek(t_n1 *stack)
 {
-	if (stk_empty(stack))
+	if (stk_is_empty(stack))
 		return (NULL);
 	return (stack->data);
 }
