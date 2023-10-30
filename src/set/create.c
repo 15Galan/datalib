@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_basics.c                                       :+:      :+:    :+:   */
+/*   create.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 20:44:57 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/22 12:51:13 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 18:38:53 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "datalib.h"
+#include "set.h"
 
-t_set	*set_new(void *data)
+/**
+ * @brief	Creates a new set.
+ * 
+ * @param data	The data to add.
+ * 
+ * @return	The new set.
+ */
+t_n1	*set_new(void *data)
 {
-	t_set	*new;
+	t_n1	*new;
 
-	new = (t_set *) malloc(sizeof(t_set));
+	new = (t_n1 *) malloc(sizeof(t_n1));
 	if (!new)
 		return (NULL);
 	new->data = data;
@@ -24,9 +31,15 @@ t_set	*set_new(void *data)
 	return (new);
 }
 
-void	set_add(t_set **set, void *data)
+/**
+ * @brief	Adds the given data to the set.
+ * 
+ * @param set	The first element of the set.
+ * @param data	The data to add.
+ */
+void	set_add(t_n1 **set, void *data)
 {
-	t_set	*new;
+	t_n1	*new;
 
 	new = set_new(data);
 	if (!new || set_contains(*set, data))
@@ -34,43 +47,4 @@ void	set_add(t_set **set, void *data)
 	while (*set)
 		set = &(*set)->next;
 	*set = new;
-}
-
-void	set_remove(t_set **set, void *data)
-{
-	t_set	*aux;
-	t_set	*prev;
-
-	if (!set_contains(*set, data))
-		return ;
-	aux = *set;
-	prev = NULL;
-	while (aux)
-	{
-		if (aux->data == data)
-		{
-			if (prev)
-				prev->next = aux->next;
-			else
-				*set = aux->next;
-			free(aux);
-			return ;
-		}
-		prev = aux;
-		aux = aux->next;
-	}
-}
-
-void	set_clear(t_set **set)
-{
-	t_set	*aux;
-
-	if (set_empty(*set))
-		return ;
-	while (*set)
-	{
-		aux = *set;
-		*set = (*set)->next;
-		free(aux);
-	}
 }
