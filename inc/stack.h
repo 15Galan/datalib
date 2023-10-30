@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 18:46:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 18:49:22 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 18:53:00 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	stk_clear(t_n1 **stack);
 
 // Checks stack information
 
-int		stk_empty(t_n1 *stack);
+int		stk_is_empty(t_n1 *stack);
 int		stk_size(t_n1 *stack);
 t_n1	*stk_top(t_n1 *stack);
 void	*stk_peek(t_n1 *stack);

@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 18:14:41 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 18:19:54 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 18:53:08 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	set_clear(t_n1 **set);
 
 // Checks set information
 
-int		set_empty(t_n1 *set);
+int		set_is_empty(t_n1 *set);
 int		set_contains(t_n1 *set, void *data);
 int		set_subset(t_n1 *set_a, t_n1 *set_b);
 int		set_equal(t_n1 *set_a, t_n1 *set_b);

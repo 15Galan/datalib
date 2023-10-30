@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   basics.c                                           :+:      :+:    :+:   */
+/*   create.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 18:50:52 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 18:58:05 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "datalib.h"
+#include "stack.h"
 
 /**
- * @brief	Creates a new element for the stack.
+ * @brief	Creates a new item for the stack.
  *
- * @param data	The data to store in the element.
+ * @param data	The data to store in the item.
  *
- * @return	Pointer to the new element.
+ * @return	The new stack.
  */
-t_stack	*stk_new(void *data)
+t_n1	*stk_new(void *data)
 {
-	t_stack	*new;
+	t_n1	*new;
 
-	new = (t_stack *) malloc(sizeof(t_stack));
+	new = (t_n1 *) malloc(sizeof(t_n1));
 	if (new == NULL)
 		return (NULL);
 	new->data = data;
@@ -32,14 +32,14 @@ t_stack	*stk_new(void *data)
 }
 
 /**
- * @brief	Adds an element to the stack.
+ * @brief	Adds an item to the stack.
  *
- * @param stack	Pointer to the stack.
- * @param data 	The data to store in the new element.
+ * @param stack	Top item of the stack.
+ * @param data 	The data to store in the stack.
  */
-void	stk_push(t_stack **stack, void *data)
+void	stk_push(t_n1 **stack, void *data)
 {
-	t_stack	*new;
+	t_n1	*new;
 
 	new = stk_new(data);
 	if (new == NULL)
