@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dll_stats.c                                        :+:      :+:    :+:   */
+/*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/19 21:11:47 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 12:11:27 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "datalib.h"
+#include "dll.h"
 
 /**
  * @brief	Checks if the list is empty.
- * @param list	Pointer to the first element of the list.
+ *
+ * @param list	The first item of the list.
  *
  * @return	1 if the list is empty;
  * 			0 otherwise.
  */
-int	dll_empty(t_dlist *list)
+int	dll_is_empty(t_n2 *list)
 {
 	return (list == NULL);
 }
 
 /**
- * @brief   Counts the number of nodes in the list.
+ * @brief   Counts the number of items in the list.
  *
- * @param list   Pointer to the first element of the list.
+ * @param list   The first item of the list.
  *
- * @return  Number of nodes in the list.
+ * @return  Number of items in the list.
  */
-int	dll_size(t_dlist *list)
+int	dll_size(t_n2 *list)
 {
 	int	i;
 
@@ -45,13 +46,13 @@ int	dll_size(t_dlist *list)
 }
 
 /**
- * @brief   Returns the first node of the list.
+ * @brief   Gets the first item of the list.
  *
- * @param list	Pointer to an element of the list.
+ * @param list	Any item of the list.
  *
- * @return	Pointer to the first node of the list.
+ * @return	The first item of the list.
  */
-t_dlist	*dll_first(t_dlist *list)
+t_n2	*dll_first(t_n2 *list)
 {
 	while (list && list->prev)
 		list = list->prev;
@@ -59,13 +60,13 @@ t_dlist	*dll_first(t_dlist *list)
 }
 
 /**
- * @brief   Returns the last node of the list.
+ * @brief   Gets the last item of the list.
  *
- * @param list	Pointer to an element of the list.
+ * @param list	Any item of the list.
  *
- * @return	Pointer to the last node of the list.
+ * @return	The last item of the list.
  */
-t_dlist	*dll_last(t_dlist *list)
+t_n2	*dll_last(t_n2 *list)
 {
 	while (list && list->next)
 		list = list->next;
@@ -73,15 +74,15 @@ t_dlist	*dll_last(t_dlist *list)
 }
 
 /**
- * @brief	Searches an element in the list.
+ * @brief	Searches an item in the list.
  *
- * @param list	Pointer to the first element of the list.
+ * @param list	The first item of the list.
  * @param data	The data to search.
  *
- * @return	Pointer to the node containing the data;
+ * @return	The item containing the data;
  * 			NULL if the data is not found.
  */
-t_dlist	*dll_search(t_dlist *list, void *data)
+t_n2	*dll_search(t_n2 *list, void *data)
 {
 	while (list)
 	{

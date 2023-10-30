@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dll_creators.c                                     :+:      :+:    :+:   */
+/*   create.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/21 21:32:51 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 13:17:36 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "datalib.h"
+#include "dll.h"
 
 /**
- * @brief   Creates a new node with the given data.
+ * @brief   Creates a new item with the given data.
  *
- * @param data  Pointer to the data to be stored in the node.
+ * @param data  The data to be stored in the item.
  *
- * @return  Pointer to the new node.
+ * @return  The new item.
  */
-t_dlist	*dll_new(void *data)
+t_n2	*dll_new(void *data)
 {
-	t_dlist	*new;
+	t_n2	*new;
 
-	new = (t_dlist *) malloc(sizeof(t_dlist));
+	new = (t_n2 *) malloc(sizeof(t_n2));
 	if (!new)
 		return (NULL);
 	new->data = data;
@@ -33,82 +33,56 @@ t_dlist	*dll_new(void *data)
 }
 
 /**
- * @brief   Adds a new node at the beginning of the list.
+ * @brief   Adds a new item at the beginning of the list.
  *
- * @param list	Pointer to the first element of the list.
- * @param elem	Pointer to the new node to be added.
+ * @param list	The first item of the list.
+ * @param node	The new item to be added.
  */
-void	dll_add_first(t_dlist **list, t_dlist *elem)
+void	dll_add_first(t_n2 **list, t_n2 *node)
 {
 	if (dll_empty(*list))
-		*list = elem;
+		*list = node;
 	else
 	{
-		elem->next = *list;
-		(*list)->prev = elem;
-		*list = elem;
+		node->next = *list;
+		(*list)->prev = node;
+		*list = node;
 	}
 }
 
 /**
- * @brief   Adds a new node after the given node.
+ * @brief   Adds a new item after the given item.
  *
- * @param list	Pointer to the first element of the list.
- * @param data  Pointer to the data to be stored in the node.
+ * @param list	The first item of the list.
+ * @param data  The data to be stored in the item.
  */
-void	dll_add_after(t_dlist *elem, t_dlist *new)
+void	dll_add_after(t_n2 *node, t_n2 *new)
 {
-	if (dll_empty(elem) || dll_empty(new))
+	if (dll_empty(node) || dll_empty(new))
 		return ;
-	new->next = elem->next;
-	new->prev = elem;
-	if (elem->next)
-		elem->next->prev = new;
-	elem->next = new;
+	new->next = node->next;
+	new->prev = node;
+	if (node->next)
+		node->next->prev = new;
+	node->next = new;
 }
 
 /**
- * @brief   Adds a new node at the end of the list.
+ * @brief   Adds a new item at the end of the list.
  *
- * @param list	Pointer to the first element of the list.
- * @param elem	Pointer to the new node to be added.
+ * @param list	The first item of the list.
+ * @param node	The new item to be added.
  */
-void	dll_add_last(t_dlist **list, t_dlist *elem)
+void	dll_add_last(t_n2 **list, t_n2 *node)
 {
-	t_dlist	*last;
+	t_n2	*last;
 
 	if (dll_empty(*list))
-		*list = elem;
+		*list = node;
 	else
 	{
 		last = dll_last(*list);
-		last->next = elem;
-		elem->prev = last;
+		last->next = node;
+		node->prev = last;
 	}
-}
-
-/**
- * @brief   Replace the data of the given node.
- *
- * @param elem	Pointer to the node to be modified.
- * @param data  The new data.
- *
- * @return  Pointer to the modified node;
- * 			NULL otherwise.
- */
-t_dlist	*dll_replace(t_dlist *elem, void *data)
-{
-	t_dlist	*new;
-
-	new = dll_new(data);
-	if (!new)
-		return (NULL);
-	if (elem->prev)
-		elem->prev->next = new;
-	if (elem->next)
-		elem->next->prev = new;
-	new->prev = elem->prev;
-	new->next = elem->next;
-	free(elem);
-	return (new);
 }
