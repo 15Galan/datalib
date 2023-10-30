@@ -6,11 +6,11 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 20:19:28 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 20:40:22 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "datalib.h"
+#include "../../inc/data_structures/queue.h"
 
 /**
  * @brief	Checks if the queue is empty.

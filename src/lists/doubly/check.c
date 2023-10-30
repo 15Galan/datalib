@@ -6,11 +6,11 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 19:59:26 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 20:41:38 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../inc/data structures/dll.h"
+#include "../../../inc/data_structures/dll.h"
 
 /**
  * @brief	Checks if the list is empty.

@@ -6,11 +6,11 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 17:56:24 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 20:21:47 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 20:40:26 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "queue.h"
+#include "../../inc/data_structures/queue.h"
 
 /**
  * @brief   Removes the first item of the queue.

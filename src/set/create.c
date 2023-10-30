@@ -6,11 +6,11 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 20:44:57 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 18:38:53 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 20:40:49 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "set.h"
+#include "../../inc/data_structures/set.h"
 
 /**
  * @brief	Creates a new set.

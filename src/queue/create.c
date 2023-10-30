@@ -6,11 +6,11 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 20:21:36 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 20:40:24 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "datalib.h"
+#include "../../inc/data_structures/queue.h"
 
 /**
  * @brief   Creates a new item with the given data.

@@ -6,11 +6,11 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 21:48:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 18:40:23 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 20:40:54 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "set.h"
+#include "../../inc/data_structures/set.h"
 
 /**
  * @brief	Perform the union operation on the given A and B sets.

@@ -6,11 +6,11 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 18:20:43 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 18:39:02 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 20:43:16 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "set.h"
+#include "../../inc/data_structures/set.h"
 
 /**
  * @brief	Removes the given data from the set.

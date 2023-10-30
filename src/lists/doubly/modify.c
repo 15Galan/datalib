@@ -6,11 +6,11 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 12:00:43 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 17:11:53 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 20:52:34 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "dll.h"
+#include "../../../inc/data_structures/dll.h"
 
 /**
  * @brief   Replaces the data in the given item with the given new data.
