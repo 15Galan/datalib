@@ -17,9 +17,9 @@
  *
  * @param list	The first element of the list.
  */
-void	cdll_print(t_cdll *list)
+void	cdll_print(t_n2 *list)
 {
-	t_cdll	*aux;
+	t_n2	*aux;
 
 	aux = cdll_first(list);
 	write(1, "(...) <-> [ ", 12);

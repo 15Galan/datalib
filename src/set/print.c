@@ -17,9 +17,9 @@
  * 
  * @param set	The first element of the set.
  */
-void	set_print(t_set *set)
+void	set_print(t_n1 *set)
 {
-	t_set	*aux;
+	t_n1	*aux;
 
 	aux = set;
 	write(1, "{ ", 2);

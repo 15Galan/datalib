@@ -109,7 +109,7 @@ void	cdll_swap(t_n2 *item_a, t_n2 *item_b)
 	if (!item_a || !item_b || item_a == item_b)
 		return ;
 	if (item_a->next == item_b)
-		cdll_swap_consecutives(&item_a, &item_b);
+		cdll_swap_consecutives(item_a, item_b);
 	else
-		cdll_swap_non_consecutives(&item_a, &item_b);
+		cdll_swap_non_consecutives(item_a, item_b);
 }

@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 18:46:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 19:41:29 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 20:42:43 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,3 +42,5 @@ void	*stk_peek(t_n1 *stack);
 // Prints the stack
 
 void	stk_print(t_n1 *stack);
+
+#endif

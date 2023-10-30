@@ -52,7 +52,7 @@ void	set_clear(t_n1 **set)
 {
 	t_n1	*aux;
 
-	if (set_empty(*set))
+	if (set_is_empty(*set))
 		return ;
 	while (*set)
 	{
