@@ -6,16 +6,15 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 18:46:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 18:53:00 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 19:41:29 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STACK_H
 # define STACK_H
 
-# include <stdlib.h>
-# include <unistd.h>
-# include "node.h"
+# include "../utils.h"
+# include "../nodes.h"
 
 /**	STACK **/
 

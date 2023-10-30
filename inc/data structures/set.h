@@ -6,16 +6,15 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 18:14:41 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 18:53:08 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 19:41:31 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SET_H
 # define SET_H
 
-# include <stdlib.h>
-# include <unistd.h>
-# include "nodes.h"
+# include "../utils.h"
+# include "../nodes.h"
 
 /** SET **/
 

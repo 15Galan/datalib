@@ -6,16 +6,15 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 17:47:09 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 18:19:55 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 19:41:33 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef QUEUE_H
 # define QUEUE_H
 
-# include <stdlib.h>
-# include <unistd.h>
-# include "node.h"
+# include "../utils.h"
+# include "../nodes.h"
 
 /**	QUEUE **/
 
