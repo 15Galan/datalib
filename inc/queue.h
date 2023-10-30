@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 17:47:09 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 18:01:47 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 18:19:55 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	que_enqueue(t_n1 **queue, void *data);
 
 // Modifies queue items
 
-    // The queue is a FIFO structure: items can't be modified.
+/* The queue is a FIFO structure: items can't be modified */
 
 // Deletes queue items
 
@@ -40,7 +40,7 @@ int		que_size(t_n1 *queue);
 void	*que_first(t_n1 *queue);
 void	*que_last(t_n1 *queue);
 
-// Print the queue
+// Prints the queue
 
 void	que_print(t_n1 *queue);
 
