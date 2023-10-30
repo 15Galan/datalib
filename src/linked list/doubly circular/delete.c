@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cdll_deleters.c                                    :+:      :+:    :+:   */
+/*   delete.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 20:55:00 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/29 12:12:44 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 17:08:47 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "datalib.h"
+#include "cdll.h"
 
 /**
- * @brief	Removes the first node of the list.
+ * @brief	Removes the first item of the list.
  * 
- * @param list	Pointer to the first element of the list.
+ * @param list	The first element of the list.
  */
-void	cdll_remove_first(t_cdll **list)
+void	cdll_remove_first(t_n2 **list)
 {
-	t_cdll	*aux;
+	t_n2	*aux;
 
-	if (cdll_empty(*list))
+	if (cdll_is_empty(*list))
 		return ;
 	aux = *list;
 	*list = (*list)->next;
@@ -38,14 +38,14 @@ void	cdll_remove_first(t_cdll **list)
 }
 
 /**
- * @brief	Removes the given node from the list.
+ * @brief	Removes the given item from the list.
  * 
- * @param list	Pointer to the first element of the list.
- * @param elem	Pointer to the element to be removed.
+ * @param list	The first element of the list.
+ * @param item	The element to be removed.
  */
-void	cdll_remove(t_cdll **list, t_cdll *elem)
+void	cdll_remove(t_n2 **list, t_n2 *item)
 {
-	if (cdll_empty(*list))
+	if (cdll_is_empty(*list))
 		return ;
 	if (cdll_size(*list) == 1)
 	{
@@ -53,23 +53,23 @@ void	cdll_remove(t_cdll **list, t_cdll *elem)
 		*list = NULL;
 		return ;
 	}
-	elem->prev->next = elem->next;
-	elem->next->prev = elem->prev;
-	elem->next = NULL;
-	elem->prev = NULL;
-	free(elem);
+	item->prev->next = item->next;
+	item->next->prev = item->prev;
+	item->next = NULL;
+	item->prev = NULL;
+	free(item);
 }
 
 /**
- * @brief	Removes the last node of the list.
+ * @brief	Removes the last item of the list.
  * 
- * @param list	Pointer to the first element of the list.
+ * @param list	The first element of the list.
  */
-void	cdll_remove_last(t_cdll **list)
+void	cdll_remove_last(t_n2 **list)
 {
-	t_cdll	*aux;
+	t_n2	*aux;
 
-	if (cdll_empty(*list))
+	if (cdll_is_empty(*list))
 		return ;
 	aux = (*list)->prev;
 	(*list)->prev = aux->prev;
@@ -80,16 +80,16 @@ void	cdll_remove_last(t_cdll **list)
 }
 
 /**
- * @brief	Removes the given node from the list and frees it.
+ * @brief	Removes the given item from the list and frees it.
  * 
- * @param list	Pointer to the first element of the list.
- * @param data	Pointer to the data to be removed.
+ * @param list	The first element of the list.
+ * @param data	The data to be removed.
  */
-void	cdll_purge(t_cdll **list, void *data)
+void	cdll_purge(t_n2 **list, void *data)
 {
-	t_cdll	*aux;
+	t_n2	*aux;
 
-	if (cdll_empty(*list))
+	if (cdll_is_empty(*list))
 		return ;
 	aux = *list;
 	while (aux)
@@ -104,15 +104,15 @@ void	cdll_purge(t_cdll **list, void *data)
 }
 
 /**
- * @brief	Removes all the nodes from the list and frees them.
- * 
- * @param list	Pointer to the first element of the list.
+ * @brief   Removes all the items of the list.
+ *
+ * @param list	The first item of the list.
  */
-void	cdll_clear(t_cdll **list)
+void	cdll_clear(t_n2 **list)
 {
-	t_cdll	*aux;
+	t_n2	*aux;
 
-	if (cdll_empty(*list))
+	if (cdll_is_empty(*list))
 		return ;
 	while (*list)
 	{

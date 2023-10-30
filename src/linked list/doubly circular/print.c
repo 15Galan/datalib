@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cdll_printers.c                                    :+:      :+:    :+:   */
+/*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 11:58:32 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/29 12:03:28 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 17:09:45 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /**
  * @brief	Prints the circular doubly linked list.
  *
- * @param list	Pointer to the first element of the list.
+ * @param list	The first element of the list.
  */
 void	cdll_print(t_cdll *list)
 {
