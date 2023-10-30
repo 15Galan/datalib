@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 17:58:40 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 20:21:36 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_n1	*que_new(void *data)
 /**
  * @brief   Adds a new item at the end of the queue.
  *
- * @param queue	The first element of the queue.
+ * @param queue	The first item of the queue.
  * @param data	The data to be stored in the item.
  */
 void	que_enqueue(t_n1 **queue, void *data)
