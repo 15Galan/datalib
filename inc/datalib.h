@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 16:16:50 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 17:47:04 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,34 +17,11 @@
 # include <unistd.h>
 # include "dll.h"
 # include "cdll.h"
+# include "queue.h"
 
 /** GENERAL PURPOSE	**/
 
 int		len(void *data);
-
-/**	QUEUE	**/
-
-// Struct for the elements of the queue.
-typedef struct s_queue
-{
-	void			*data;
-	struct s_queue	*next;
-}	t_queue;
-
-// Basic operations.
-t_queue	*que_new(void *data);
-void	que_enqueue(t_queue **queue, void *data);
-void	*que_dequeue(t_queue **queue);
-void	que_clear(t_queue **queue);
-
-// Check some data from the queue.
-int		que_empty(t_queue *queue);
-int		que_size(t_queue *queue);
-t_queue	*que_first(t_queue *queue);
-t_queue	*que_last(t_queue *queue);
-
-// Print the queue.
-void	que_print(t_queue *queue);
 
 /**	STACK	**/
 

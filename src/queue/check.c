@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   que_stats.c                                        :+:      :+:    :+:   */
+/*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/22 12:50:24 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 17:59:38 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 /**
  * @brief	Checks if the queue is empty.
- * @param queue	Pointer to the first element of the queue.
+ *
+ * @param queue	The first element of the queue.
  *
  * @return	1 if the queue is empty;
  * 			0 otherwise.
  */
-int	que_empty(t_queue *queue)
+int	que_is_empty(t_n1 *queue)
 {
 	return (queue == NULL);
 }
@@ -27,11 +28,11 @@ int	que_empty(t_queue *queue)
 /**
  * @brief   Counts the number of nodes in the queue.
  *
- * @param queue   Pointer to the first element of the queue.
+ * @param queue   The first element of the queue.
  *
  * @return  Number of nodes in the queue.
  */
-int	que_size(t_queue *queue)
+int	que_size(t_n1 *queue)
 {
 	int	i;
 
@@ -49,9 +50,9 @@ int	que_size(t_queue *queue)
  *
  * @param queue	Pointer to an element of the queue.
  *
- * @return	Pointer to the first node of the queue.
+ * @return	The first node of the queue.
  */
-t_queue	*que_first(t_queue *queue)
+t_n1	*que_first(t_n1 *queue)
 {
 	return (queue);
 }
@@ -61,9 +62,9 @@ t_queue	*que_first(t_queue *queue)
  *
  * @param queue	Pointer to an element of the queue.
  *
- * @return	Pointer to the last node of the queue.
+ * @return	The last node of the queue.
  */
-t_queue	*que_last(t_queue *queue)
+t_n1	*que_last(t_n1 *queue)
 {
 	while (queue && queue->next)
 		queue = queue->next;
@@ -73,13 +74,13 @@ t_queue	*que_last(t_queue *queue)
 /**
  * @brief	Searches an element in the queue.
  *
- * @param queue	Pointer to the first element of the queue.
+ * @param queue	The first element of the queue.
  * @param data	The data to search.
  *
- * @return	Pointer to the node containing the data;
+ * @return	The node containing the data;
  * 			NULL if the data is not found.
  */
-t_queue	*que_search(t_queue *queue, void *data)
+t_n1	*que_search(t_n1 *queue, void *data)
 {
 	while (queue)
 	{
