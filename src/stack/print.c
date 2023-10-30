@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_printers.c                                     :+:      :+:    :+:   */
+/*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/19 21:51:42 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/28 23:01:31 by antgalan         ###   ########.fr       */
+/*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
+/*   Updated: 2023/10/30 18:59:51 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "datalib.h"
+#include "stack.h"
 
-void	set_print(t_set *set)
+/**
+ * @brief	Prints the stack.
+ *
+ * @param stack	The stack.
+ */
+void	stk_print(t_n1 *stack)
 {
-	t_set	*aux;
-
-	aux = set;
-	write(1, "{ ", 2);
-	while (aux)
+	write(1, "| ", 2);
+	while (stack)
 	{
-		write(1, aux->data, len(aux->data));
-		if (aux->next)
-			write(1, ", ", 2);
-		aux = aux->next;
+		write(1, stack->data, len(stack->data));
+		if (stack->next)
+			write(1, " | ", 3);
+		stack = stack->next;
 	}
-	write(1, " }", 2);
+	write(1, " |", 2);
 }

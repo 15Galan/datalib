@@ -6,16 +6,15 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 11:38:18 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 17:38:38 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 19:41:36 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DLL_H
 # define DLL_H
 
-# include <stdlib.h>
-# include <unistd.h>
-# include "nodes.h"
+# include "../utils.h"
+# include "../nodes.h"
 
 /** DOUBLY LINKED LIST **/
 

@@ -1,45 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   set_basics.c                                       :+:      :+:    :+:   */
+/*   delete.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/19 20:44:57 by antgalan          #+#    #+#             */
-/*   Updated: 2023/01/22 12:51:13 by antgalan         ###   ########.fr       */
+/*   Created: 2023/10/30 18:20:43 by antgalan          #+#    #+#             */
+/*   Updated: 2023/10/30 18:39:02 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "datalib.h"
+#include "set.h"
 
-t_set	*set_new(void *data)
+/**
+ * @brief	Removes the given data from the set.
+ * 
+ * @param set	The first element of the set.
+ * @param data	The data to remove.
+ */
+void	set_remove(t_n1 **set, void *data)
 {
-	t_set	*new;
-
-	new = (t_set *) malloc(sizeof(t_set));
-	if (!new)
-		return (NULL);
-	new->data = data;
-	new->next = NULL;
-	return (new);
-}
-
-void	set_add(t_set **set, void *data)
-{
-	t_set	*new;
-
-	new = set_new(data);
-	if (!new || set_contains(*set, data))
-		return ;
-	while (*set)
-		set = &(*set)->next;
-	*set = new;
-}
-
-void	set_remove(t_set **set, void *data)
-{
-	t_set	*aux;
-	t_set	*prev;
+	t_n1	*aux;
+	t_n1	*prev;
 
 	if (!set_contains(*set, data))
 		return ;
@@ -61,9 +43,14 @@ void	set_remove(t_set **set, void *data)
 	}
 }
 
-void	set_clear(t_set **set)
+/**
+ * @brief	Removes all the elements of the set.
+ * 
+ * @param set	The first element of the set.
+ */
+void	set_clear(t_n1 **set)
 {
-	t_set	*aux;
+	t_n1	*aux;
 
 	if (set_empty(*set))
 		return ;
