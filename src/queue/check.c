@@ -71,22 +71,3 @@ t_n1	*que_last(t_n1 *queue)
 	return (queue);
 }
 
-/**
- * @brief	Searches an element in the queue.
- *
- * @param queue	The first element of the queue.
- * @param data	The data to search.
- *
- * @return	The node containing the data;
- * 			NULL if the data is not found.
- */
-t_n1	*que_search(t_n1 *queue, void *data)
-{
-	while (queue)
-	{
-		if (queue->data == data)
-			return (queue);
-		queue = queue->next;
-	}
-	return (NULL);
-}
