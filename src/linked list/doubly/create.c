@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 13:17:36 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 17:07:25 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,53 +36,79 @@ t_n2	*dll_new(void *data)
  * @brief   Adds a new item at the beginning of the list.
  *
  * @param list	The first item of the list.
- * @param node	The new item to be added.
+ * @param item	The new item to be added.
  */
-void	dll_add_first(t_n2 **list, t_n2 *node)
+void	dll_add_first(t_n2 **list, t_n2 *item)
 {
-	if (dll_empty(*list))
-		*list = node;
+	t_n2	*first;
+
+	if (!item)
+		return ;
+	if (dll_is_empty(*list))
+		*list = item;
 	else
 	{
-		node->next = *list;
-		(*list)->prev = node;
-		*list = node;
+		first = dll_first(*list);
+		first->prev = item;
+		item->next = first;
+		item->prev = NULL;
+		*list = item;
 	}
+}
+
+/**
+ * @brief   Adds a new item before the given item.
+ *
+ * @param list	The first item of the list.
+ * @param data  The data to be stored in the item.
+ */
+void	dll_add_before(t_n2 *item, t_n2 *new)
+{
+	if (!item || !new)
+		return ;
+	new->next = item;
+	new->prev = item->prev;
+	if (item->prev)
+		item->prev->next = new;
+	item->prev = new;
 }
 
 /**
  * @brief   Adds a new item after the given item.
  *
- * @param list	The first item of the list.
- * @param data  The data to be stored in the item.
+ * @param list		The first item of the list.
+ * @param new_item	The new item to be added.
  */
-void	dll_add_after(t_n2 *node, t_n2 *new)
+void	dll_add_after(t_n2 *item, t_n2 *new_item)
 {
-	if (dll_empty(node) || dll_empty(new))
+	if (!item || !new_item)
 		return ;
-	new->next = node->next;
-	new->prev = node;
-	if (node->next)
-		node->next->prev = new;
-	node->next = new;
+	new_item->next = item->next;
+	new_item->prev = item;
+	if (item->next)
+		item->next->prev = new_item;
+	item->next = new_item;
 }
 
 /**
  * @brief   Adds a new item at the end of the list.
  *
  * @param list	The first item of the list.
- * @param node	The new item to be added.
+ * @param item	The new item to be added.
  */
-void	dll_add_last(t_n2 **list, t_n2 *node)
+void	dll_add_last(t_n2 **list, t_n2 *item)
 {
 	t_n2	*last;
 
-	if (dll_empty(*list))
-		*list = node;
+	if (!item)
+		return ;
+	if (dll_is_empty(*list))
+		*list = item;
 	else
 	{
 		last = dll_last(*list);
-		last->next = node;
-		node->prev = last;
+		last->next = item;
+		item->prev = last;
+		item->next = NULL;
 	}
 }

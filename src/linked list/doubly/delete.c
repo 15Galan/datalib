@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 13:22:54 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 16:48:44 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,19 +34,19 @@ void	dll_remove_first(t_n2 **list)
  * @brief   Removes the given item from the list.
  *
  * @param list	The first item of the list.
- * @param node	The item to be removed.
+ * @param item	The item to be removed.
  */
-void	dll_remove(t_n2 **list, t_n2 *node)
+void	dll_remove(t_n2 **list, t_n2 *item)
 {
 	if (dll_is_empty(*list))
 		return ;
-	if (node->prev)
-		node->prev->next = node->next;
+	if (item->prev)
+		item->prev->next = item->next;
 	else
-		*list = node->next;
-	if (node->next)
-		node->next->prev = node->prev;
-	free(node);
+		*list = item->next;
+	if (item->next)
+		item->next->prev = item->prev;
+	free(item);
 }
 
 /**
@@ -71,7 +71,7 @@ void	dll_remove_last(t_n2 **list)
 }
 
 /**
- * @brief	Removes all the nodes with the given data.
+ * @brief	Removes all the items with the given data.
  *
  * @param list	The first item of the list.
  * @param data	The data to be removed.
@@ -92,7 +92,7 @@ void	dll_purge(t_n2 **list, void *data)
 }
 
 /**
- * @brief   Removes all the nodes of the list.
+ * @brief   Removes all the items of the list.
  *
  * @param list	The first item of the list.
  */
