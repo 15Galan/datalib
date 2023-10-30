@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 16:17:37 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 16:47:45 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 17:51:34 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	cdll_clear(t_n2 **list);
 
 // Checks list information
 
-int		cdll_empty(t_n2 *list);
+int		cdll_is_empty(t_n2 *list);
 int		cdll_size(t_n2 *list);
 t_n2	*cdll_first(t_n2 *list);
 t_n2	*cdll_last(t_n2 *list);
