@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 18:00:35 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/30 20:22:02 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 /**
  * @brief	Prints the queue.
  * 
- * @param queue	The first element of the queue.
+ * @param queue	The queue.
  */
-void	que_print(t_queue *queue)
+void	que_print(t_n1 *queue)
 {
-	t_queue	*aux;
+	t_n1	*aux;
 
 	aux = queue;
 	write(1, "( ", 2);
