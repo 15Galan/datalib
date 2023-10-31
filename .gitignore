@@ -73,8 +73,5 @@ cmake-build-*/
 
 #### Proyecto ###
 
-# Librería
-DS
-
-# Archivos de test
-tests/*.md
+# Carpeta de objetos
+obj/
