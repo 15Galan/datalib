@@ -6,17 +6,12 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 20:41:30 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/31 18:25:14 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../inc/data_structures/dll.h"
 
-/**
- * @brief   Removes the first item of the list.
- *
- * @param list	The first item of the list.
- */
 void	dll_remove_first(t_n2 **list)
 {
 	t_n2	*aux;
@@ -30,12 +25,6 @@ void	dll_remove_first(t_n2 **list)
 	free(aux);
 }
 
-/**
- * @brief   Removes the given item from the list.
- *
- * @param list	The first item of the list.
- * @param item	The item to be removed.
- */
 void	dll_remove(t_n2 **list, t_n2 *item)
 {
 	if (dll_is_empty(*list))
@@ -49,11 +38,6 @@ void	dll_remove(t_n2 **list, t_n2 *item)
 	free(item);
 }
 
-/**
- * @brief   Removes the last item of the list.
- *
- * @param list	The first item of the list.
- */
 void	dll_remove_last(t_n2 **list)
 {
 	t_n2	*aux;
@@ -70,12 +54,6 @@ void	dll_remove_last(t_n2 **list)
 	free(aux);
 }
 
-/**
- * @brief	Removes all the items with the given data.
- *
- * @param list	The first item of the list.
- * @param data	The data to be removed.
- */
 void	dll_purge(t_n2 **list, void *data)
 {
 	t_n2	*aux;
@@ -91,11 +69,6 @@ void	dll_purge(t_n2 **list, void *data)
 	}
 }
 
-/**
- * @brief   Removes all the items of the list.
- *
- * @param list	The first item of the list.
- */
 void	dll_clear(t_n2 **list)
 {
 	t_n2	*aux;

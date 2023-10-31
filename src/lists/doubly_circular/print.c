@@ -6,17 +6,12 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 11:58:32 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 20:53:02 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/31 18:37:16 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../inc/data_structures/cdll.h"
 
-/**
- * @brief	Prints the circular doubly linked list.
- *
- * @param list	The first element of the list.
- */
 void	cdll_print(t_n2 *list)
 {
 	t_n2	*aux;

@@ -6,19 +6,12 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/19 20:44:57 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 20:40:49 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/31 18:41:38 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/data_structures/set.h"
 
-/**
- * @brief	Creates a new set.
- * 
- * @param data	The data to add.
- * 
- * @return	The new set.
- */
 t_n1	*set_new(void *data)
 {
 	t_n1	*new;
@@ -31,12 +24,6 @@ t_n1	*set_new(void *data)
 	return (new);
 }
 
-/**
- * @brief	Adds the given data to the set.
- * 
- * @param set	The first element of the set.
- * @param data	The data to add.
- */
 void	set_add(t_n1 **set, void *data)
 {
 	t_n1	*new;

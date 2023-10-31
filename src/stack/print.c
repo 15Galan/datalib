@@ -6,17 +6,12 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/01 18:40:27 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 20:41:12 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/31 18:45:34 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/data_structures/stack.h"
 
-/**
- * @brief	Prints the stack.
- *
- * @param stack	The stack.
- */
 void	stk_print(t_n1 *stack)
 {
 	write(1, "| ", 2);
