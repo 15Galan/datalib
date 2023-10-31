@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 20:40:22 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/31 00:57:42 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,3 @@ t_n1	*que_last(t_n1 *queue)
 		queue = queue->next;
 	return (queue);
 }
-
