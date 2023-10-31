@@ -6,17 +6,12 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 20:55:00 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 20:41:55 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/31 18:32:21 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../inc/data_structures/cdll.h"
 
-/**
- * @brief	Removes the first item of the list.
- * 
- * @param list	The first element of the list.
- */
 void	cdll_remove_first(t_n2 **list)
 {
 	t_n2	*aux;
@@ -37,12 +32,6 @@ void	cdll_remove_first(t_n2 **list)
 	free (aux);
 }
 
-/**
- * @brief	Removes the given item from the list.
- * 
- * @param list	The first element of the list.
- * @param item	The element to be removed.
- */
 void	cdll_remove(t_n2 **list, t_n2 *item)
 {
 	if (cdll_is_empty(*list))
@@ -60,11 +49,6 @@ void	cdll_remove(t_n2 **list, t_n2 *item)
 	free(item);
 }
 
-/**
- * @brief	Removes the last item of the list.
- * 
- * @param list	The first element of the list.
- */
 void	cdll_remove_last(t_n2 **list)
 {
 	t_n2	*aux;
@@ -79,12 +63,6 @@ void	cdll_remove_last(t_n2 **list)
 	free(aux);
 }
 
-/**
- * @brief	Removes the given item from the list and frees it.
- * 
- * @param list	The first element of the list.
- * @param data	The data to be removed.
- */
 void	cdll_purge(t_n2 **list, void *data)
 {
 	t_n2	*aux;
@@ -103,11 +81,6 @@ void	cdll_purge(t_n2 **list, void *data)
 	}
 }
 
-/**
- * @brief   Removes all the items of the list.
- *
- * @param list	The first item of the list.
- */
 void	cdll_clear(t_n2 **list)
 {
 	t_n2	*aux;

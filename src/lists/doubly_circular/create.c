@@ -6,19 +6,12 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:12:03 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 20:41:52 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/31 18:31:00 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../inc/data_structures/cdll.h"
 
-/**
- * @brief   Creates a new item with the given data.
- *
- * @param data  The data to be stored in the item.
- *
- * @return  The new item.
- */
 t_n2	*cdll_new(void *data)
 {
 	t_n2	*new;
@@ -32,12 +25,6 @@ t_n2	*cdll_new(void *data)
 	return (new);
 }
 
-/**
- * @brief   Adds a new item at the beginning of the list.
- *
- * @param list	The first item of the list.
- * @param item	The new item to be added.
- */
 void	cdll_add_first(t_n2 **list, t_n2 *item)
 {
 	if (!item)
@@ -54,12 +41,6 @@ void	cdll_add_first(t_n2 **list, t_n2 *item)
 	}
 }
 
-/**
- * @brief   Adds a new item before the given item.
- *
- * @param list		The first item of the list.
- * @param new_item  The new item to be added.
- */
 void	cdll_add_before(t_n2 *item, t_n2 *new_item)
 {
 	if (!item || !new_item)
@@ -70,12 +51,6 @@ void	cdll_add_before(t_n2 *item, t_n2 *new_item)
 	item->prev = new_item;
 }
 
-/**
- * @brief   Adds a new item after the given item.
- *
- * @param list		The first item of the list.
- * @param new_item  The new item to be added.
- */
 void	cdll_add_after(t_n2 *item, t_n2 *new_item)
 {
 	if (!item || !new_item)
@@ -86,12 +61,6 @@ void	cdll_add_after(t_n2 *item, t_n2 *new_item)
 	item->next = new_item;
 }
 
-/**
- * @brief   Adds a new item at the end of the list.
- *
- * @param list	The first item of the list.
- * @param item	The new item to be added.
- */
 void	cdll_add_last(t_n2 **list, t_n2 *item)
 {
 	if (cdll_is_empty(*list))
