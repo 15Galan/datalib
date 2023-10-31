@@ -8,10 +8,15 @@ CC	=	gcc -Wall -Wextra -Werror
 AR	= 	ar rc
 RM	= 	rm -f
 
+# Directories
+inc =	inc
+src =	src
+obj =	obj
+
 # Files
-INC	=	$(wildcard inc/*.h inc/*/*.h inc/*/*/*.h)
-SRC	= 	$(wildcard src/*.c src/*/*.c src/*/*/*.c)
-OBJ	=	$(SRC:.c=.o)
+INC	=	$(wildcard $(inc)/*.h $(inc)/*/*.h $(inc)/*/*/*.h)
+SRC	= 	$(wildcard $(src)/*.c $(src)/*/*.c $(src)/*/*/*.c)
+OBJ	=	$(patsubst $(src)/%.c, $(obj)/%.o, $(SRC))
 
 
 ### RULES ###
@@ -22,7 +27,7 @@ all: $(OBJ)
 	@echo "File '$(LIB)' created."
 
 clean:
-	@$(RM) -r $(OBJ)
+	@$(RM) -r $(obj)
 	@echo "Object files removed."
 
 fclean: clean
@@ -34,7 +39,8 @@ re: fclean all
 
 .PHONY: all clean fclean re
 
-%.o: %.c
+$(obj)/%.o: $(src)/%.c
+	@mkdir -p $(dir $@)
 	@$(CC) -c $< -o $@
 	@echo "File '$<' compiled."
 
