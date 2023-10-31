@@ -6,19 +6,12 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 12:53:46 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/30 20:41:27 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/10/31 18:19:08 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../inc/data_structures/dll.h"
 
-/**
- * @brief   Creates a new item with the given data.
- *
- * @param data  The data to be stored in the item.
- *
- * @return  The new item.
- */
 t_n2	*dll_new(void *data)
 {
 	t_n2	*new;
@@ -32,12 +25,6 @@ t_n2	*dll_new(void *data)
 	return (new);
 }
 
-/**
- * @brief   Adds a new item at the beginning of the list.
- *
- * @param list	The first item of the list.
- * @param item	The new item to be added.
- */
 void	dll_add_first(t_n2 **list, t_n2 *item)
 {
 	t_n2	*first;
@@ -56,12 +43,6 @@ void	dll_add_first(t_n2 **list, t_n2 *item)
 	}
 }
 
-/**
- * @brief   Adds a new item before the given item.
- *
- * @param list	The first item of the list.
- * @param data  The data to be stored in the item.
- */
 void	dll_add_before(t_n2 *item, t_n2 *new)
 {
 	if (!item || !new)
@@ -73,12 +54,6 @@ void	dll_add_before(t_n2 *item, t_n2 *new)
 	item->prev = new;
 }
 
-/**
- * @brief   Adds a new item after the given item.
- *
- * @param list		The first item of the list.
- * @param new_item	The new item to be added.
- */
 void	dll_add_after(t_n2 *item, t_n2 *new_item)
 {
 	if (!item || !new_item)
@@ -90,12 +65,6 @@ void	dll_add_after(t_n2 *item, t_n2 *new_item)
 	item->next = new_item;
 }
 
-/**
- * @brief   Adds a new item at the end of the list.
- *
- * @param list	The first item of the list.
- * @param item	The new item to be added.
- */
 void	dll_add_last(t_n2 **list, t_n2 *item)
 {
 	t_n2	*last;
