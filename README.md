@@ -11,16 +11,19 @@
     <a href="https://wakatime.com/@srgalan">
         <img src="https://wakatime.com/badge/user/a3473630-066f-4ef4-9d7a-4c59975ac61a/project/018b7168-3937-4766-8a11-3e9007922112.svg" alt="Tiempo" />
     </a>
+    <img src="https://api.visitorbadge.io/api/visitors?user=15Galan&repo=datalib&label=visitas&countColor=%2385e3ff&style=flat" />
 </div>
 
 ---
 
 # datalib
 
+Una estructura de datos​ es una forma particular de organizar información para que pueda ser utilizada de manera eficiente. Diferentes tipos de estructuras de datos son adecuados para diferentes tipos de aplicaciones, y algunos de ellos son altamente especializados para tareas específicas.[^1]
+
 Esta librería contiene diversas estructuras de datos y funciones para su manejo.
 
 > [!NOTE]
-> Esta librería es compatible con los proyectos de **42 The Network**.  
+> Compatible con los proyectos de **42 The Network**.  
 > El código cumple la **Norma (v3.x)** y las directrices de la escuela.
 
 ## Estructuras de datos
@@ -120,7 +123,7 @@ Consiste en una **lista enlazada** en la que cada nodo apunta al siguiente, y do
 
 **Características**
 
-- Solo se pueden añadir nodos sobre del tope.
+- Solo se pueden añadir nodos sobre el tope.
 - Solo se puede eliminar el tope de la pila.
 - Los nodos intermedios y final no son accesibles.
 - No se pueden modificar nodos.
@@ -143,8 +146,11 @@ Consiste en una **lista enlazada** en la que cada nodo apunta al siguiente, y do
 **Características**
 
 - No se pueden añadir nodos repetidos.
-- Se pueden aplicar operaciones de [teoría de conjuntos](https://es.wikipedia.org/wiki/Conjunto).
+- Se pueden aplicar operaciones de teoría de conjuntos[^2].
 
 **Estructura**
 
 - El último nodo apunta a `NULL` como nodo siguiente.
+
+[^1]: [Wikipedia](https://es.wikipedia.org/wiki/Estructura_de_datos): estructuras de datos
+[^2]: [Wikipedia](https://es.wikipedia.org/wiki/Conjunto): conjuntos

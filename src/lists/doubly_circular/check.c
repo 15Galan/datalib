@@ -6,7 +6,7 @@
 /*   By: antgalan <antgalan@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 22:28:07 by antgalan          #+#    #+#             */
-/*   Updated: 2023/10/31 18:37:04 by antgalan         ###   ########.fr       */
+/*   Updated: 2023/11/01 10:55:08 by antgalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,16 @@ int	cdll_size(t_n2 *list)
 
 t_n2	*cdll_first(t_n2 *list)
 {
-	while (list->prev)
-		list = list->prev;
+	if (cdll_is_empty(list))
+		return (NULL);
 	return (list);
 }
 
 t_n2	*cdll_last(t_n2 *list)
 {
-	while (list->next && list->next != list)
-		list = list->next;
-	return (list);
+	if (cdll_is_empty(list))
+		return (NULL);
+	return (list->prev);
 }
 
 t_n2	*cdll_search(t_n2 *list, void *data)
